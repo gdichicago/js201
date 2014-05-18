@@ -1,0 +1,356 @@
+<!doctype html>
+<html>
+<head>
+  <title>Girl Develop It</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/css/reveal.css">
+  <link rel="stylesheet" href="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/css/light.css">
+
+  <!-- If use the PDF print sheet so students can print slides-->
+  <link rel="stylesheet" href="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/css/print/pdf.css" type="text/css" media="print">
+    <!--[if lt IE 9]>
+    <script src="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Intro to jQuery</h1>
+        </section><!--/jquery title slide-->
+
+
+        <section>
+          <header><h1>What's a library?</h1></header>
+            <p>A collection of reusable methods for a particular purpose.</p>
+            <p>A math library might have functions like:</p>
+<pre>
+math.sum(array);
+math.pow(num, num);
+math.factorial(num);
+</pre>
+        </section><!--/what's a library?-->
+
+        <section>
+          <header><h1>What's a library?</h1></header>
+            <ul>
+              <li>Include a script tag to the library on your page</li>
+              <li>Call functions from that library</li>
+            </ul>
+<pre>
+&#60;script src="http://imagine-it.org/math.js"&#62;&#60;&#47;script&#62;
+&#60;script&#62;
+  var answer = math.sum(2, 2);
+  alert(answer);
+&#60;&#47;script&#62;
+</pre>
+        </section><!--/what's a library?-->
+
+        <section>
+          <header><h1><a href="exercises/exercise1.html">Exercise 1!</a></h1></header>
+        </section><!--/exercise1-->
+
+        <section>
+          <header><h1>Why use libraries?</h1></header>
+            <p>Write less code for common tasks.</p>
+            <p>Abstract on top of cross-browser differences.</p>
+            <a href="http://jquery.com/"><img src="img/jquery.png"></a>
+        </section><!--/why use libraries?-->
+
+
+
+
+        <section>
+          <header><h1>jQuery: Why?</h1></header>
+            <p>No library:</p>
+<pre>var elems = document.getElementsByTagName("img");
+for (var i = 0; i< elems.length; i++) {
+  elems[i].style.display = "none";
+}
+</pre>
+
+            <p>jQuery:</p>
+<pre>$('img').hide();</pre>
+
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: why?-->
+
+
+
+
+
+        <section>
+          <header><h1>jQuery: Why?</h1></header>
+            <p>No library:</p>
+<pre>var p = document.createElement('p');
+p.appendChild(document.createTextNode('Welcome!'));
+p.style.cssFloat = 'left';
+p.style.backgroundColor = 'red';
+p.className = 'special';
+document.querySelector('div.header').appendChild(p);</pre>
+
+            <p>jQuery:</p>
+<pre>var newP = $('&#60;p&#62Welcome!&#60;&#47;p&#62');
+newP.css({'float': 'left', 'background-color': 'red')
+newP.addClass('special');
+$('div.header').append(newP);</pre>
+
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: why?-->
+
+
+        <section>
+          <header><h1>jQuery: The Basics</h1></header>
+            <br>
+            <br>
+<pre style="text-align:center">&lt;p&gt;Welcome to jQuery!&lt;/p&gt;</pre>
+              <img src="img/arrow.png">
+<pre style="text-align:center">$('p').addClass('special');</pre>
+              <img src="img/arrow.png">
+<pre style="text-align:center">&lt;p class="special">Welcome to jQuery!&lt;/p&gt;</pre>
+
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: the basics 1-->
+
+        <section>
+          <header><h1>jQuery: The Basics</h1></header>
+            <br>
+            <table>
+              <tr><td colspan="3">
+              <pre style="text-align:center;">$('p').addClass('special');</pre>
+              </tr>
+              <tr>
+                <td><pre style="text-align:center; font-weight:bold;">$</pre></td>
+                <td><pre style="text-align:center; font-weight:bold;">('p')</pre></td>
+                <td><pre style="text-align:center; font-weight:bold;">addClass('special')</pre></td>
+              </tr>
+              <tr>
+                <td class="grey-cell">The global jQuery function. <br> Can also be "jQuery".</td>
+                <td class="grey-cell">Finds DOM element(s) according to what's in the quotes. <br> Returns a "jQuery collection."</td>
+                <td class="grey-cell">Built-in jQuery method that adds the specified class to the collection.
+                  <br><a href="http://api.jquery.com/addClass/" target="_blank">Read the docs here.</a>
+                </td>
+              </tr>
+            </table>
+            </table>
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: the basics 2-->
+
+        <section>
+          <header><h1>jQuery: Finding Elements</h1></header>
+            <br>
+            <p style="text-align:center">All CSS selectors are valid, plus more. <a href="http://api.jquery.com/category/selectors/">Read the docs.</a></p>
+            <br>
+            <table style="width:100%">
+              <thead>
+                <tr>
+                  <th>With this HTML..</th>
+                  <th>We find it this way:
+                </tr>
+              </thead>
+              <tr>
+                <td class="code-cell"><pre>&lt;p&gt;Welcome!&lt;/p&gt;</pre><br></td>
+                <td class="code-cell"><pre>$('p')</pre><br></td>
+              </tr>
+              <tr>
+                <td class="code-cell"><pre>&lt;div id="main"&gt;Welcome!&lt;/div&gt;</pre><br></td>
+                <td class="code-cell"><pre>$('#main')</pre><br></td>
+              </tr>
+              <tr>
+                <td class="code-cell"><pre>&lt;p class="intro"&gt;Welcome!&lt;/p&gt;</pre><br></td>
+                <td class="code-cell"><pre>$('.intro')</pre><br></td>
+              </tr>
+              <tr>
+                <td class="code-cell"><pre>&lt;div id="main"&gt;
+&lt;p class="intro"&gt;Welcome!&lt;/p&gt;
+&lt;/div&gt;</pre></td>
+                <td class="code-cell"><pre>$('#main .intro')</pre></td>
+              </tr>
+            </table>
+
+
+
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: finding elements-->
+
+
+        <section>
+          <header><h1>jQuery: Reading Elements</h1></header>
+            <br>
+
+
+            <table>
+              <tr>
+                <td colspan="3">
+                If we start with this HTML...
+                <pre>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</pre>
+                <br>
+                ...We can find out lots of things about it:
+              <tr>
+                <td class="code-cell"><pre>console.log($('a').html());</pre></td>
+                <td>→</td>
+                <td class="code-cell"><pre>Yahoo!</pre></td>
+              </tr>
+              <tr>
+                <td class="code-cell"><pre>console.log($('a').attr('href'));</pre></td>
+                <td>→</td>
+                <td class="code-cell"><pre>yahoo.com</pre></td>
+              </tr>
+              <tr>
+                <td class="code-cell"><pre>console.log($('a').css('color'));</pre></td>
+                <td>→</td>
+                <td class="code-cell"><pre>purple</pre></td>
+              </tr>
+            </table>
+
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: reading elements-->
+
+
+        <section>
+          <header><h1><a href="exercises/exercise_finding.html">Exercise Time!</a></h1></header>
+        </section><!--/exercise2-->
+
+
+        <section>
+          <header><h1>jQuery: Changing Elements</h1></header>
+            <br>If we start with this HTML:
+            <pre>&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;</pre>
+            <br>
+            We can use this jQuery:
+            <pre>$('a').html('Yahoo!')
+$('a').attr('href', 'http://www.yahoo.com')
+$('a').css({'color': 'purple'})</pre><br>
+            And we'll get this:
+            <pre>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</pre>
+
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: changing elements-->
+
+        
+        <section>
+          <header><h1>jQuery: Creating Elements</h1></header>
+            <br>
+            <p>Pass in any HTML string and jQuery will create it and return it as a collection.</p>
+            <br>
+            <table style="width:100%;">
+              <thead>
+                <tr>
+                  <th>With this jQuery...</th>
+                  <th></th>
+                  <th>We create this HTML:</th>
+                </tr>
+              </thead>
+              <tr>
+                <td class="code-cell"><pre>$('&lt;p&gt;')</pre></td>
+                <td>→</td>
+                <td class="code-cell"><pre>&lt;p&gt;&lt;/p&gt;</pre></td>
+              </tr>
+              <tr>
+                <td class="code-cell"><pre>$('&lt;p&gt;Welcome!&lt;/p&gt;')</pre></td>
+                <td>→</td>
+                <td class="code-cell"><pre>&lt;p&gt;Welcome!&lt;/p&gt;</pre></td>
+              </tr>
+              <tr>
+                <td class="code-cell"><pre>$('&lt;p class="intro"&gt;Welcome!&lt;/p&gt;')</pre></td>
+                <td>→</td>
+                <td class="code-cell"><pre>&lt;p class="intro"&gt;Welcome!&lt;/p&gt;</pre></td>
+              </tr>
+            </table>
+
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: creating elements-->
+
+
+        <section>
+          <header><h1>jQuery: Looping</h1></header>
+            <br>
+            <pre>var links = $('a');
+links.each(function(index, elem) {
+   var link = $(elem);
+   link.html(link.html() + '!');
+});
+</pre>
+
+<pre>
+var processElem = function(index, elem) {
+   var link = $(elem);
+   link.html(link.html() + '!');
+};
+var links = $('a');
+links.each(processElem);</pre>
+
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: looping-->
+
+
+        <section>
+          <header><h1>jQuery: Including</h1></header>
+            <p><a href="http://jquery.com/download/">Download</a> or link from an official CDN.</p>
+            <p>Then include using a &#60;script&#62 tag on the page.</p>
+<pre>&lt;html&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hi!&lt;/h1&gt;
+  &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+  // Your code here
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+        </section><!--/jquery: including-->
+
+
+        <section>
+          <header><h1><a href="exercises/exercise_changing.html">Exercise Time!</a></h1></header>
+        </section><!--/exercise2-->
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/js/head.min.js"></script>
+    <script src="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: false,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+  </body>
+</html>
