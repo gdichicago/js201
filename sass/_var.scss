@@ -1,0 +1,18 @@
+// FONT SIZE
+$fontSize: 2em;
+
+// COLORS
+$accent: #FF733F;
+$light: #EC4863;
+$dark: #5C2849;
+$text: #333333;
+$background: lighten($text, 75%);
+
+@mixin font-base {
+  color: $text;
+  font: {
+    family: 'Open Sans', Arial, sans-serif;
+    size: $fontSize;
+    weight: 400;
+  }
+}

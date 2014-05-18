@@ -11,70 +11,77 @@
     <!--[if lt IE 9]>
     <script src="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/js/html5shiv.js"></script>
     <![endif]-->
-  <link href="/stylesheets/screen.css" rel="stylesheet" type="text/css" />
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
+  <link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
 
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>Intro to jQuery</h1>
+          <h1>JS 201</h1>
+          <h2>Intro to jQuery</h2>
+          <h3>Girl Develop It</h3>
         </section><!--/jquery title slide-->
 
 
         <section>
-          <header><h1>What's a library?</h1></header>
+          <header><h3>What's a library?</h3></header>
             <p>A collection of reusable methods for a particular purpose.</p>
             <p>A math library might have functions like:</p>
-<pre>
-math.sum(array);
+<pre><code class="javascript" contenteditable>math.sum(array);
 math.pow(num, num);
 math.factorial(num);
-</pre>
+</code></pre>
         </section><!--/what's a library?-->
 
         <section>
-          <header><h1>What's a library?</h1></header>
+          <header><h3>What's a library?</h3></header>
             <ul>
               <li>Include a script tag to the library on your page</li>
               <li>Call functions from that library</li>
             </ul>
-<pre>
-&#60;script src="http://imagine-it.org/math.js"&#62;&#60;&#47;script&#62;
+<pre><code class="html" contenteditable>&#60;script src="http://imagine-it.org/math.js"&#62;&#60;&#47;script&#62;
 &#60;script&#62;
   var answer = math.sum(2, 2);
   alert(answer);
 &#60;&#47;script&#62;
-</pre>
+</code></pre>
         </section><!--/what's a library?-->
 
         <section>
-          <header><h1><a href="exercises/exercise1.html">Exercise 1!</a></h1></header>
+          <header><h3><a href="exercises/exercise1.html">Exercise 1!</a></h3></header>
         </section><!--/exercise1-->
 
         <section>
-          <header><h1>Why use libraries?</h1></header>
+          <header><h3>Why use libraries?</h3></header>
             <p>Write less code for common tasks.</p>
             <p>Abstract on top of cross-browser differences.</p>
             <a href="http://jquery.com/"><img src="img/jquery.png"></a>
         </section><!--/why use libraries?-->
 
 
-
+        <section>
+          <h3>jQuery: Why?</h3>
+          <p>jQuery makes it easier for us to write code that is:</p>
+          <ul>
+            <li>Shorter</li>
+            <li>Cross-browser compatible</li>
+            <li><em>Way</em> less work</li>
+          </ul>
+        </section>
 
         <section>
-          <header><h1>jQuery: Why?</h1></header>
+          <header><h3>jQuery: Why?</h3></header>
             <p>No library:</p>
-<pre>var elems = document.getElementsByTagName("img");
+<pre><code class="javascript" contenteditable>var elems = document.getElementsByTagName("img");
 for (var i = 0; i< elems.length; i++) {
   elems[i].style.display = "none";
 }
-</pre>
+</code></pre>
 
             <p>jQuery:</p>
-<pre>$('img').hide();</pre>
-
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+<pre><code class="javascript" contenteditable>('img').hide();</code></pre>
         </section><!--/jquery: why?-->
 
 
@@ -82,49 +89,71 @@ for (var i = 0; i< elems.length; i++) {
 
 
         <section>
-          <header><h1>jQuery: Why?</h1></header>
+          <header><h3>jQuery: Why?</h3></header>
             <p>No library:</p>
-<pre>var p = document.createElement('p');
+<pre><code class="javascript" contenteditable>var p = document.createElement('p');
 p.appendChild(document.createTextNode('Welcome!'));
 p.style.cssFloat = 'left';
 p.style.backgroundColor = 'red';
 p.className = 'special';
-document.querySelector('div.header').appendChild(p);</pre>
+document.querySelector('div.header').appendChild(p);</code></pre>
 
             <p>jQuery:</p>
-<pre>var newP = $('&#60;p&#62Welcome!&#60;&#47;p&#62');
+<pre><code class="javascript" contenteditable>var newP = $('&#60;p&#62Welcome!&#60;&#47;p&#62');
 newP.css({'float': 'left', 'background-color': 'red')
 newP.addClass('special');
-$('div.header').append(newP);</pre>
-
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+$('div.header').append(newP);</code></pre>
         </section><!--/jquery: why?-->
 
 
         <section>
-          <header><h1>jQuery: The Basics</h1></header>
-            <br>
-            <br>
-<pre style="text-align:center">&lt;p&gt;Welcome to jQuery!&lt;/p&gt;</pre>
+          <header><h3>jQuery: The Basics</h3></header>
+          <p>We start with an HTML element:</p>
+<pre><code class="html" contenteditable>&lt;p&gt;Welcome to jQuery!&lt;/p&gt;</code></pre>
               <img src="img/arrow.png">
-<pre style="text-align:center">$('p').addClass('special');</pre>
+              <p>Use jQuery to add a class to it:</p>
+<pre><code class="javascript" contenteditable>$('p').addClass('special');</code></pre>
               <img src="img/arrow.png">
-<pre style="text-align:center">&lt;p class="special">Welcome to jQuery!&lt;/p&gt;</pre>
-
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+              <p>And tada! Our HTML now has a class:</p>
+<pre><code class="js" contenteditable>&lt;p class="special">Welcome to jQuery!&lt;/p&gt;</code></pre>
         </section><!--/jquery: the basics 1-->
 
         <section>
-          <header><h1>jQuery: The Basics</h1></header>
-            <br>
+          <header><h3>Breaking it down</h3></header>
+          <p>We have one simple line of jQuery here, but there's a lot happening.</p>
+<pre><code class="js" contenteditable>$('p').addClass('special');</code></pre>
+        </section>
+
+        <section>
+          <h3>Breaking it down: <code>$</code></h3>
+          <pre><code class="js" contenteditable>$</code></pre>
+          <p><code>$</code> is the global jQuery function.</p>
+          <p>You can also use <code>jQuery</code> if you want, but <code>$</code> is the <strong>standard</strong>.</p>
+        </section>
+
+        <section>
+          <h3>Breaking it down: <code>('p')</code></h3>
+          <pre><code class="js" contenteditable>$('p')</code></pre>
+          <p><code>('p')</code> finds DOM element(s) according to what's in the quotes. In our example, that's all <code>p</code> elements.</p>
+          <p>This returns a "jQuery collection" of all <code>p</code> elements in the DOM.</p>
+        </section>
+
+        <section>
+          <h3>Breaking it down: <code>addClass()</code></h3>
+          <pre><code class="js" contenteditable>$('p').addClass('special');</code></pre>
+          <p><code>.addClass()</code> is a built-in jQuery function method that adds the specified class to the collection.</p>
+          <p>It takes one argument: a string that is the class name (special in our example).</p>
+          <p><a href="http://api.jquery.com/addClass/" target="_blank">Read the docs here.</a></p>
+        </section>
+<!--             <br>
             <table>
               <tr><td colspan="3">
-              <pre style="text-align:center;">$('p').addClass('special');</pre>
+              <pre style="text-align:center;">$('p').addClass('special');</code></pre>
               </tr>
               <tr>
-                <td><pre style="text-align:center; font-weight:bold;">$</pre></td>
-                <td><pre style="text-align:center; font-weight:bold;">('p')</pre></td>
-                <td><pre style="text-align:center; font-weight:bold;">addClass('special')</pre></td>
+                <td><pre style="text-align:center; font-weight:bold;">$</code></pre></td>
+                <td><pre style="text-align:center; font-weight:bold;">('p')</code></pre></td>
+                <td><pre style="text-align:center; font-weight:bold;">addClass('special')</code></pre></td>
               </tr>
               <tr>
                 <td class="grey-cell">The global jQuery function. <br> Can also be "jQuery".</td>
@@ -135,11 +164,11 @@ $('div.header').append(newP);</pre>
               </tr>
             </table>
             </table>
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
         </section><!--/jquery: the basics 2-->
 
         <section>
-          <header><h1>jQuery: Finding Elements</h1></header>
+          <header><h3>jQuery: Finding Elements</h3></header>
             <br>
             <p style="text-align:center">All CSS selectors are valid, plus more. <a href="http://api.jquery.com/category/selectors/">Read the docs.</a></p>
             <br>
@@ -151,33 +180,33 @@ $('div.header').append(newP);</pre>
                 </tr>
               </thead>
               <tr>
-                <td class="code-cell"><pre>&lt;p&gt;Welcome!&lt;/p&gt;</pre><br></td>
-                <td class="code-cell"><pre>$('p')</pre><br></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p&gt;Welcome!&lt;/p&gt;</code></pre><br></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>('p')</code></pre><br></td>
               </tr>
               <tr>
-                <td class="code-cell"><pre>&lt;div id="main"&gt;Welcome!&lt;/div&gt;</pre><br></td>
-                <td class="code-cell"><pre>$('#main')</pre><br></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;div id="main"&gt;Welcome!&lt;/div&gt;</code></pre><br></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>('#main')</code></pre><br></td>
               </tr>
               <tr>
-                <td class="code-cell"><pre>&lt;p class="intro"&gt;Welcome!&lt;/p&gt;</pre><br></td>
-                <td class="code-cell"><pre>$('.intro')</pre><br></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p class="intro"&gt;Welcome!&lt;/p&gt;</code></pre><br></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>('.intro')</code></pre><br></td>
               </tr>
               <tr>
-                <td class="code-cell"><pre>&lt;div id="main"&gt;
+                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;div id="main"&gt;
 &lt;p class="intro"&gt;Welcome!&lt;/p&gt;
-&lt;/div&gt;</pre></td>
-                <td class="code-cell"><pre>$('#main .intro')</pre></td>
+&lt;/div&gt;</code></pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>('#main .intro')</code></pre></td>
               </tr>
             </table>
 
 
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
         </section><!--/jquery: finding elements-->
 
 
         <section>
-          <header><h1>jQuery: Reading Elements</h1></header>
+          <header><h3>jQuery: Reading Elements</h3></header>
             <br>
 
 
@@ -185,53 +214,53 @@ $('div.header').append(newP);</pre>
               <tr>
                 <td colspan="3">
                 If we start with this HTML...
-                <pre>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</pre>
+                <pre><code class="javascript" contenteditable>lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
                 <br>
                 ...We can find out lots of things about it:
               <tr>
-                <td class="code-cell"><pre>console.log($('a').html());</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>onsole.log($('a').html());</code></pre></td>
                 <td>→</td>
-                <td class="code-cell"><pre>Yahoo!</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>ahoo!</code></pre></td>
               </tr>
               <tr>
-                <td class="code-cell"><pre>console.log($('a').attr('href'));</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>onsole.log($('a').attr('href'));</code></pre></td>
                 <td>→</td>
-                <td class="code-cell"><pre>yahoo.com</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>ahoo.com</code></pre></td>
               </tr>
               <tr>
-                <td class="code-cell"><pre>console.log($('a').css('color'));</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>onsole.log($('a').css('color'));</code></pre></td>
                 <td>→</td>
-                <td class="code-cell"><pre>purple</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>urple</code></pre></td>
               </tr>
             </table>
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
         </section><!--/jquery: reading elements-->
 
 
         <section>
-          <header><h1><a href="exercises/exercise_finding.html">Exercise Time!</a></h1></header>
+          <header><h3><a href="exercises/exercise_finding.html">Exercise Time!</a></h3></header>
         </section><!--/exercise2-->
 
 
         <section>
-          <header><h1>jQuery: Changing Elements</h1></header>
+          <header><h3>jQuery: Changing Elements</h3></header>
             <br>If we start with this HTML:
-            <pre>&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;</pre>
+            <pre><code class="javascript" contenteditable>lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;</code></pre>
             <br>
             We can use this jQuery:
-            <pre>$('a').html('Yahoo!')
+            <pre><code class="javascript" contenteditable>('a').html('Yahoo!')
 $('a').attr('href', 'http://www.yahoo.com')
-$('a').css({'color': 'purple'})</pre><br>
+$('a').css({'color': 'purple'})</code></pre><br>
             And we'll get this:
-            <pre>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</pre>
+            <pre><code class="javascript" contenteditable>lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
         </section><!--/jquery: changing elements-->
 
         
         <section>
-          <header><h1>jQuery: Creating Elements</h1></header>
+          <header><h3>jQuery: Creating Elements</h3></header>
             <br>
             <p>Pass in any HTML string and jQuery will create it and return it as a collection.</p>
             <br>
@@ -244,68 +273,67 @@ $('a').css({'color': 'purple'})</pre><br>
                 </tr>
               </thead>
               <tr>
-                <td class="code-cell"><pre>$('&lt;p&gt;')</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>('&lt;p&gt;')</code></pre></td>
                 <td>→</td>
-                <td class="code-cell"><pre>&lt;p&gt;&lt;/p&gt;</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p&gt;&lt;/p&gt;</code></pre></td>
               </tr>
               <tr>
-                <td class="code-cell"><pre>$('&lt;p&gt;Welcome!&lt;/p&gt;')</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>('&lt;p&gt;Welcome!&lt;/p&gt;')</code></pre></td>
                 <td>→</td>
-                <td class="code-cell"><pre>&lt;p&gt;Welcome!&lt;/p&gt;</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p&gt;Welcome!&lt;/p&gt;</code></pre></td>
               </tr>
               <tr>
-                <td class="code-cell"><pre>$('&lt;p class="intro"&gt;Welcome!&lt;/p&gt;')</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>('&lt;p class="intro"&gt;Welcome!&lt;/p&gt;')</code></pre></td>
                 <td>→</td>
-                <td class="code-cell"><pre>&lt;p class="intro"&gt;Welcome!&lt;/p&gt;</pre></td>
+                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p class="intro"&gt;Welcome!&lt;/p&gt;</code></pre></td>
               </tr>
             </table>
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
         </section><!--/jquery: creating elements-->
 
 
         <section>
-          <header><h1>jQuery: Looping</h1></header>
+          <header><h3>jQuery: Looping</h3></header>
             <br>
-            <pre>var links = $('a');
+            <pre><code class="javascript" contenteditable>ar links = $('a');
 links.each(function(index, elem) {
    var link = $(elem);
    link.html(link.html() + '!');
 });
-</pre>
+</code></pre>
 
-<pre>
-var processElem = function(index, elem) {
+<pre><code class="javascript" contenteditable>var processElem = function(index, elem) {
    var link = $(elem);
    link.html(link.html() + '!');
 };
 var links = $('a');
-links.each(processElem);</pre>
+links.each(processElem);</code></pre>
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
         </section><!--/jquery: looping-->
 
 
         <section>
-          <header><h1>jQuery: Including</h1></header>
+          <header><h3>jQuery: Including</h3></header>
             <p><a href="http://jquery.com/download/">Download</a> or link from an official CDN.</p>
             <p>Then include using a &#60;script&#62 tag on the page.</p>
-<pre>&lt;html&gt;
+<pre><code class="javascript" contenteditable>lt;html&gt;
 &lt;body&gt;
-  &lt;h1&gt;Hi!&lt;/h1&gt;
+  &lt;h3&gt;Hi!&lt;/h3&gt;
   &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
   &lt;script&gt;
   // Your code here
   &lt;/script&gt;
 &lt;/body&gt;
-&lt;/html&gt;</pre>
+&lt;/html&gt;</code></pre>
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</pre>
+<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
         </section><!--/jquery: including-->
 
 
         <section>
-          <header><h1><a href="exercises/exercise_changing.html">Exercise Time!</a></h1></header>
+          <header><h3><a href="exercises/exercise_changing.html">Exercise Time!</a></h3></header>
         </section><!--/exercise2-->
 
       </div>
