@@ -54,6 +54,12 @@ math.factorial(num);
         </section><!--/exercise1-->
 
         <section>
+          <h1>&rarr;</h1>
+          <h2>Why use jQuery?</h2>
+          <h3>Why use libraries?</h3>
+        </section>
+
+        <section>
           <header><h3>Why use libraries?</h3></header>
             <p>Write less code for common tasks.</p>
             <p>Abstract on top of cross-browser differences.</p>
@@ -105,9 +111,14 @@ newP.addClass('special');
 $('div.header').append(newP);</code></pre>
         </section><!--/jquery: why?-->
 
+        <section>
+          <h1>&rarr;</h1>
+          <h2>Basic syntax</h2>
+          <h3>Breaking it down</h3>
+        </section>
 
         <section>
-          <header><h3>jQuery: The Basics</h3></header>
+          <header><h3>Basic syntax</h3></header>
           <p>We start with an HTML element:</p>
 <pre><code class="html" contenteditable>&lt;p&gt;Welcome to jQuery!&lt;/p&gt;</code></pre>
               <img src="img/arrow.png">
@@ -125,84 +136,76 @@ $('div.header').append(newP);</code></pre>
         </section>
 
         <section>
-          <h3>Breaking it down: <code>$</code></h3>
+          <h3><code>$</code></h3>
           <pre><code class="js" contenteditable>$</code></pre>
           <p><code>$</code> is the global jQuery function.</p>
           <p>You can also use <code>jQuery</code> if you want, but <code>$</code> is the <strong>standard</strong>.</p>
         </section>
 
         <section>
-          <h3>Breaking it down: <code>('p')</code></h3>
+          <h3><code>('p')</code></h3>
           <pre><code class="js" contenteditable>$('p')</code></pre>
           <p><code>('p')</code> finds DOM element(s) according to what's in the quotes. In our example, that's all <code>p</code> elements.</p>
           <p>This returns a "jQuery collection" of all <code>p</code> elements in the DOM.</p>
         </section>
 
         <section>
-          <h3>Breaking it down: <code>addClass()</code></h3>
+          <h3><code>addClass()</code></h3>
           <pre><code class="js" contenteditable>$('p').addClass('special');</code></pre>
           <p><code>.addClass()</code> is a built-in jQuery function method that adds the specified class to the collection.</p>
           <p>It takes one argument: a string that is the class name (special in our example).</p>
           <p><a href="http://api.jquery.com/addClass/" target="_blank">Read the docs here.</a></p>
         </section>
-<!--             <br>
-            <table>
-              <tr><td colspan="3">
-              <pre style="text-align:center;">$('p').addClass('special');</code></pre>
-              </tr>
-              <tr>
-                <td><pre style="text-align:center; font-weight:bold;">$</code></pre></td>
-                <td><pre style="text-align:center; font-weight:bold;">('p')</code></pre></td>
-                <td><pre style="text-align:center; font-weight:bold;">addClass('special')</code></pre></td>
-              </tr>
-              <tr>
-                <td class="grey-cell">The global jQuery function. <br> Can also be "jQuery".</td>
-                <td class="grey-cell">Finds DOM element(s) according to what's in the quotes. <br> Returns a "jQuery collection."</td>
-                <td class="grey-cell">Built-in jQuery method that adds the specified class to the collection.
-                  <br><a href="http://api.jquery.com/addClass/" target="_blank">Read the docs here.</a>
-                </td>
-              </tr>
-            </table>
-            </table>
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
-        </section><!--/jquery: the basics 2-->
 
         <section>
-          <header><h3>jQuery: Finding Elements</h3></header>
-            <br>
-            <p style="text-align:center">All CSS selectors are valid, plus more. <a href="http://api.jquery.com/category/selectors/">Read the docs.</a></p>
-            <br>
-            <table style="width:100%">
-              <thead>
-                <tr>
-                  <th>With this HTML..</th>
-                  <th>We find it this way:
-                </tr>
-              </thead>
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p&gt;Welcome!&lt;/p&gt;</code></pre><br></td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>('p')</code></pre><br></td>
-              </tr>
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;div id="main"&gt;Welcome!&lt;/div&gt;</code></pre><br></td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>('#main')</code></pre><br></td>
-              </tr>
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p class="intro"&gt;Welcome!&lt;/p&gt;</code></pre><br></td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>('.intro')</code></pre><br></td>
-              </tr>
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;div id="main"&gt;
-&lt;p class="intro"&gt;Welcome!&lt;/p&gt;
-&lt;/div&gt;</code></pre></td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>('#main .intro')</code></pre></td>
-              </tr>
-            </table>
+          <h1>&rarr;</h1>
+          <h2>Finding elements</h2>
+          <h3>By element, class, and id</h3>
+        </section>
 
+        <section>
+          <h3>Finding elements</h3>
+          <p>All CSS selectors are valid, plus more.</p>
+          <p><a href="http://api.jquery.com/category/selectors/">Read the docs.</a></p>
+        </section>
 
+        <section>
+          <h3>By HTML element</h3>
+          <p>With this HTML:</p>
+          <pre><code class="html" contenteditable>&lt;p&gt;Welcome!&lt;/p&gt;</code></pre>
+          <p>We find it this way:</p>
+          <pre><code class="js" contenteditable>$('p')</code></pre>
+        </section>
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
-        </section><!--/jquery: finding elements-->
+        <section>
+          <h3>By id</h3>
+          <p>With this HTML:</p>
+          <pre><code class="html" contenteditable>&lt;div id="main"&gt;Welcome!&lt;/div&gt;</code></pre>
+          <p>We find it this way:</p>
+          <pre><code class="js" contenteditable>$('#main')</code></pre>
+        </section>
+
+        <section>
+          <h3>By class</h3>
+          <p>With this HTML:</p>
+          <pre><code class="html" contenteditable>&lt;div class="intro"&gt;Welcome!&lt;/div&gt;</code></pre>
+          <p>We find it this way:</p>
+          <pre><code class="js" contenteditable>$('.intro')</code></pre>
+        </section>
+
+        <section>
+          <h3>Complex selectors</h3>
+          <p>With this HTML:</p>
+          <pre><code class="html" contenteditable>&lt;div id="main" class="intro"&gt;Welcome!&lt;/div&gt;</code></pre>
+          <p>We find it this way:</p>
+          <pre><code class="js" contenteditable>$('#main .intro')</code></pre>
+        </section>
+
+        <section>
+          <h1>&rarr;</h1>
+          <h2>Reading elements</h2>
+          <h3>Multiple ways</h3>
+        </section>
 
 
         <section>
