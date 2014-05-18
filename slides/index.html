@@ -343,42 +343,34 @@ $('div.header').append(newP);</code></pre>
           <img src="img/patronus.gif" alt="WITH MAGIC!">
         </section>
 
-
-
-
+        <section>
+          <h3>Creating elements</h3>
+          <p>Pass in any HTML string and jQuery will create it and return it as a collection.</p>
+        </section>
 
         <section>
-          <header><h3>jQuery: Creating Elements</h3></header>
-            <br>
-            <p>Pass in any HTML string and jQuery will create it and return it as a collection.</p>
-            <br>
-            <table style="width:100%;">
-              <thead>
-                <tr>
-                  <th>With this jQuery...</th>
-                  <th></th>
-                  <th>We create this HTML:</th>
-                </tr>
-              </thead>
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>('&lt;p&gt;')</code></pre></td>
-                <td>→</td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p&gt;&lt;/p&gt;</code></pre></td>
-              </tr>
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>('&lt;p&gt;Welcome!&lt;/p&gt;')</code></pre></td>
-                <td>→</td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p&gt;Welcome!&lt;/p&gt;</code></pre></td>
-              </tr>
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>('&lt;p class="intro"&gt;Welcome!&lt;/p&gt;')</code></pre></td>
-                <td>→</td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>lt;p class="intro"&gt;Welcome!&lt;/p&gt;</code></pre></td>
-              </tr>
-            </table>
+          <h3>Simple elements</h3>
+          <p>With this jQuery:</p>
+          <pre><code class="js" contenteditable>$(&lt;p&gt;);</code></pre>
+          <p>We create this HTML:</p>
+          <pre><code class="html">&lt;p&gt;&lt;/p&gt;</code></pre>
+        </section>
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
-        </section><!--/jquery: creating elements-->
+        <section>
+          <h3>Complex elements</h3>
+          <p>With this jQuery:</p>
+          <pre><code class="js" contenteditable>$(&lt;p&gt;Welcome&lt;/p&gt;);</code></pre>
+          <p>We create this HTML:</p>
+          <pre><code class="html">&lt;p&gt;Welcome&lt;/p&gt;</code></pre>
+        </section>
+
+        <section>
+          <h3 class="small"><em>Really</em> complex elements</h3>
+          <p>With this jQuery:</p>
+          <pre><code class="js" contenteditable>$(&lt;p class="intro"&gt;Welcome&lt;/p&gt;)</code></pre>
+          <p>We create this HTML:</p>
+          <pre><code class="html">&lt;p class="intro"&gt;Welcome&lt;/p&gt;</code></pre>
+        </section>
 
 
         <section>
