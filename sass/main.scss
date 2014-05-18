@@ -21,7 +21,7 @@ body {
 
   h2 {
     color: $dark;
-    font-size: $fontSize * 1.5;
+    font-size: $fontSize * 1.45;
   }
 
   h3 {
@@ -51,5 +51,9 @@ body {
     &:hover {
       color: $dark;
     }
+  }
+
+  .strike {
+    text-decoration: line-through;
   }
 }

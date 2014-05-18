@@ -25,7 +25,7 @@ body {
 /* line 22, ../sass/main.scss */
 .reveal .slides section h2 {
   color: #2d3e50;
-  font-size: 3em;
+  font-size: 2.9em;
 }
 /* line 27, ../sass/main.scss */
 .reveal .slides section h3 {
@@ -56,4 +56,8 @@ body {
 /* line 51, ../sass/main.scss */
 .reveal .slides section a:hover, .reveal .slides section a.roll:hover {
   color: #2d3e50;
+}
+/* line 56, ../sass/main.scss */
+.reveal .slides section .strike {
+  text-decoration: line-through;
 }
