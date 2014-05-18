@@ -54,8 +54,7 @@ math.factorial(num);
         </section><!--/exercise1-->
 
         <section>
-          <h1>&rarr;</h1>
-          <h2>Why use jQuery?</h2>
+          <h1>Why use jQuery?</h1>
           <h3>Why use libraries?</h3>
         </section>
 
@@ -111,9 +110,11 @@ newP.addClass('special');
 $('div.header').append(newP);</code></pre>
         </section><!--/jquery: why?-->
 
+
+
+
         <section>
-          <h1>&rarr;</h1>
-          <h2>Basic syntax</h2>
+          <h1>Basic syntax</h1>
           <h3>Breaking it down</h3>
         </section>
 
@@ -157,8 +158,43 @@ $('div.header').append(newP);</code></pre>
           <p><a href="http://api.jquery.com/addClass/" target="_blank">Read the docs here.</a></p>
         </section>
 
+
+
+
         <section>
-          <h1>&rarr;</h1>
+          <h1>Getters and setters</h1>
+          <h3>Finding and changing elements</h3>
+        </section>
+
+        <section>
+          <h3>Getters</h3>
+          <p>Getters return information about the HTML.</p>
+          <p>Sometimes they take arguments to narrow our focus:</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;</code></pre>
+          <pre><code class="js" contenteditable>$('a').attr('href');
+// "Welcome!"</code></pre>
+          <p>And sometimes they don't:</p>
+          <pre><code class="html" contenteditable>&lt;p&gt;Welcome!&lt;/p&gt;</code></pre>
+          <pre><code class="js" contenteditable>$('p').html();
+// "Welcome!"</code></pre>
+        </section>
+
+        <section>
+          <h3>Setters</h3>
+          <p>Setters change the HTML.</p>
+          <p>They almost always take an argument (sometimes more than one).</p>
+          <pre><code class="html" contenteditable>&lt;p&gt;Welcome!&lt;/p&gt;</code></pre>
+          <pre><code class="js" contenteditable>$('p').html("Hello");</code></pre>
+          <p>Will change your HTML to:</p>
+          <pre><code class="html" contenteditable>&lt;p&gt;Hello&lt;/p&gt;</code></pre>
+        </section>
+
+
+
+
+
+
+        <section>
           <h2>Finding elements</h2>
           <h3>By element, class, and id</h3>
         </section>
@@ -201,67 +237,105 @@ $('div.header').append(newP);</code></pre>
           <pre><code class="js" contenteditable>$('#main .intro')</code></pre>
         </section>
 
+
+
+
         <section>
-          <h1>&rarr;</h1>
+          <h1>Getters</h1>
           <h2>Reading elements</h2>
-          <h3>Multiple ways</h3>
+          <h3>HTML, attributes, and style properties</h3>
         </section>
 
+        <section>
+          <h3>Reading elements</h3>
+          <p>There are a few different ways to read elements.</p>
+          <p>Starting with this HTML:</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
+          <p>We can find out lots of fun things!</p>
+        </section>
 
         <section>
-          <header><h3>jQuery: Reading Elements</h3></header>
-            <br>
+          <h3><code>html()</code></h3>
+          <p>Gets the HTML contents of the first element that matches your selector.</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
+          <pre><code class="js" contenteditable>console.log($('a').html());
+// "Yahoo"</code></pre>
+          <p><a href="http://api.jquery.com/html/">Read the docs.</a></p>
+        </section>
 
+        <section>
+          <h3><code>attr()</code></h3>
+          <p>Gets the value of a specific attribute for the first element that matches your selector.</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
+          <pre><code class="js" contenteditable>console.log($('a').attr('href'));
+// "http://www.yahoo.com"</code></pre>
+          <p><a href="http://api.jquery.com/attr/">Read the docs.</a></p>
+        </section>
 
-            <table>
-              <tr>
-                <td colspan="3">
-                If we start with this HTML...
-                <pre><code class="javascript" contenteditable>lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
-                <br>
-                ...We can find out lots of things about it:
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>onsole.log($('a').html());</code></pre></td>
-                <td>→</td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>ahoo!</code></pre></td>
-              </tr>
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>onsole.log($('a').attr('href'));</code></pre></td>
-                <td>→</td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>ahoo.com</code></pre></td>
-              </tr>
-              <tr>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>onsole.log($('a').css('color'));</code></pre></td>
-                <td>→</td>
-                <td class="code-cell"><pre><code class="javascript" contenteditable>urple</code></pre></td>
-              </tr>
-            </table>
-
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
-        </section><!--/jquery: reading elements-->
-
+        <section>
+          <h3><code>css()</code></h3>
+          <p>Gets the value of the style property for first element that matches your selector.</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
+          <pre><code class="js" contenteditable>console.log($('a').css('color'));
+// "purple"</code></pre>
+          <p><a href="http://api.jquery.com/css/">Read the docs.</a></p>
+        </section>
 
         <section>
           <header><h3><a href="exercises/exercise_finding.html">Exercise Time!</a></h3></header>
         </section><!--/exercise2-->
 
 
+
+
+
         <section>
-          <header><h3>jQuery: Changing Elements</h3></header>
-            <br>If we start with this HTML:
-            <pre><code class="javascript" contenteditable>lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;</code></pre>
-            <br>
-            We can use this jQuery:
-            <pre><code class="javascript" contenteditable>('a').html('Yahoo!')
-$('a').attr('href', 'http://www.yahoo.com')
-$('a').css({'color': 'purple'})</code></pre><br>
-            And we'll get this:
-            <pre><code class="javascript" contenteditable>lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
+          <h1>Setters</h1>
+          <h2>Changing elements</h2>
+          <h3>HTML, attributes, and style properties</h3>
+        </section>
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
-        </section><!--/jquery: changing elements-->
+        <section>
+          <h3>Changing elements</h3>
+          <p>We can change different parts of our HTML using jQuery.</p>
+          <p>Starting with this HTML:</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Google&lt;/a&gt;</code></pre>
+        </section>
 
-        
+        <section>
+          <h3><code>html('value')</code></h3>
+          <p>Sets the value of the HTML.</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Google&lt;/a&gt;</code></pre>
+          <pre><code class="js" contenteditable>$('a').html('Yahoo!');</code></pre>
+          <p>Changes the HTML to:</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
+          <p><a href="http://api.jquery.com/html/">Read the docs.</a></p>
+        </section>
+
+        <section>
+          <h3 class="small"><code>attr('attribute', 'value')</code></h3>
+          <p>Sets the value of the property for the first element that matches your selector.</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
+          <pre><code class="js" contenteditable>$('a').attr('href', 'http://www.yahoo.com');</code></pre>
+          <p>Changes the HTML to:</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
+          <p><a href="http://api.jquery.com/attr/">Read the docs.</a></p>
+        </section>
+
+        <section>
+          <h3 class="small"><code>css({'property': 'value'})</code></h3>
+          <p>Sets the value of the style property for first element that matches your selector. <strong>Note the syntax difference here!</strong></p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
+          <pre><code class="js" contenteditable>$('a').css({'color': 'red'});</code></pre>
+          <p>Changes the HTML to:</p>
+          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:red"&gt;Yahoo!&lt;/a&gt;</code></pre>
+          <p><a href="http://api.jquery.com/css/">Read the docs.</a></p>
+        </section>
+
+
+
+
+
         <section>
           <header><h3>jQuery: Creating Elements</h3></header>
             <br>
@@ -371,7 +445,7 @@ links.each(processElem);</code></pre>
         history: true,
 
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+        transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
 
         // Optional libraries used to extend on reveal.js
         dependencies: [
