@@ -19,37 +19,41 @@ body {
 }
 /* line 17, ../sass/main.scss */
 .reveal .slides section h1 {
-  color: #ff733f;
+  color: #e64c66;
   font-size: 3.5em;
 }
 /* line 22, ../sass/main.scss */
 .reveal .slides section h2 {
-  color: #5c2849;
+  color: #2d3e50;
   font-size: 3em;
 }
 /* line 27, ../sass/main.scss */
 .reveal .slides section h3 {
-  color: #ec4863;
+  color: #1bbc9b;
   font-size: 2.5em;
 }
-/* line 33, ../sass/main.scss */
+/* line 30, ../sass/main.scss */
+.reveal .slides section h3.small {
+  font-size: 1.8em;
+}
+/* line 36, ../sass/main.scss */
 .reveal .slides section strong {
   font-weight: 700;
 }
-/* line 37, ../sass/main.scss */
+/* line 40, ../sass/main.scss */
 .reveal .slides section pre code {
   font-size: 1.6em;
   line-height: 1.2em;
   padding: 15px;
 }
-/* line 43, ../sass/main.scss */
+/* line 46, ../sass/main.scss */
 .reveal .slides section a, .reveal .slides section a.roll {
-  color: #ff733f;
+  color: #e64c66;
   text-decoration: none;
   font-weight: 700;
   padding: 50px;
 }
-/* line 48, ../sass/main.scss */
+/* line 51, ../sass/main.scss */
 .reveal .slides section a:hover, .reveal .slides section a.roll:hover {
-  color: #ec4863;
+  color: #2d3e50;
 }
