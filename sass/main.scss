@@ -16,17 +16,17 @@ body {
 
   h1 {
     color: $accent;
-    font-size: $fontSize * 1.75;
+    font-size: $fontSize * 1.7;
   }
 
   h2 {
     color: $dark;
-    font-size: $fontSize * 1.45;
+    font-size: $fontSize * 1.4;
   }
 
   h3 {
     color: $light;
-    font-size: $fontSize * 1.25;
+    font-size: $fontSize * 1.2;
     &.small {
       font-size: $fontSize * 0.9;
     }
