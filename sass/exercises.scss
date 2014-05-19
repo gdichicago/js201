@@ -67,8 +67,8 @@ header {
           border-radius: 20px;
           color: $dark;
           &:hover {
-            background-color: $dark;
-            color: $light;
+            background-color: lighten($light, 40%);
+            color: $dark;
           }
         }
       }
@@ -82,7 +82,8 @@ header {
   margin: 1%;
   padding: 1%;
   width: 29%;
-  background-color: darken($background, 10%);
+  border-radius: 50px;
+  background-color: lighten($dark, 50%);
   img {
     border-radius: 50px;
     display: block;
@@ -93,11 +94,17 @@ header {
     font-size: $fontSize * 0.8;
     text-align: center;
   }
-  &:nth-child(3n) h2 {
-    color: $accent;
+  &:nth-child(3n) {
+    background-color: lighten($accent, 30%);
+    h2 {
+      color: $accent;
+    }
   }
-  &:nth-child(3n+2) h2 {
-    color: $light;
+  &:nth-child(3n+2) {
+    background-color: lighten($light, 40%);
+    h2 {
+      color: $light;
+    }
   }
 }
 
