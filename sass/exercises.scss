@@ -3,6 +3,13 @@
 body {
   @include font-base;
   background-color: $background;
+  background-image:
+    linear-gradient(
+      to bottom,
+      lighten($light, 30%),
+      lighten($dark, 40%),
+      lighten($accent, 20%)
+    )
 }
 
 #container {
@@ -63,12 +70,12 @@ header {
         font-size: $fontSize * 0.6;
         a {
           padding: 5px 50px;
-          background-color: $light;
+          background-color: $dark;
           border-radius: 20px;
-          color: $dark;
+          color: $light;
           &:hover {
-            background-color: lighten($light, 40%);
-            color: $dark;
+            background-color: lighten($dark, 40%);
+            color: $accent;
           }
         }
       }
