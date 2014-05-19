@@ -16,3 +16,10 @@ $background: lighten($text, 75%);
     weight: 400;
   }
 }
+
+
+@mixin transitionAll($time:1.5s) {
+  -webkit-transition: all $time ease;
+  -moz-transition: all $time ease;
+  transition: all $time ease;
+}

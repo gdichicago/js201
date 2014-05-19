@@ -1,4 +1,59 @@
-/* line 3, ../sass/main.scss */
+/* line 1, ../sass/_slides.scss */
+.reveal .slides section {
+  background-color: #f2f2f2;
+}
+/* line 4, ../sass/_slides.scss */
+.reveal .slides section h1, .reveal .slides section h2, .reveal .slides section h3, .reveal .slides section h4, .reveal .slides section h5, .reveal .slides section h6 {
+  font-weight: 800;
+  line-height: 1.2em;
+  padding-bottom: 20px;
+}
+/* line 10, ../sass/_slides.scss */
+.reveal .slides section h1 {
+  color: #e64c66;
+  font-size: 3.4em;
+}
+/* line 15, ../sass/_slides.scss */
+.reveal .slides section h2 {
+  color: #2d3e50;
+  font-size: 2.8em;
+}
+/* line 20, ../sass/_slides.scss */
+.reveal .slides section h3 {
+  color: #1bbc9b;
+  font-size: 2.4em;
+}
+/* line 23, ../sass/_slides.scss */
+.reveal .slides section h3.small {
+  font-size: 1.8em;
+}
+/* line 29, ../sass/_slides.scss */
+.reveal .slides section strong {
+  font-weight: 700;
+}
+/* line 33, ../sass/_slides.scss */
+.reveal .slides section pre code {
+  font-size: 1.6em;
+  line-height: 1.2em;
+  padding: 15px;
+}
+/* line 39, ../sass/_slides.scss */
+.reveal .slides section a, .reveal .slides section a.roll {
+  color: #e64c66;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 50px;
+}
+/* line 44, ../sass/_slides.scss */
+.reveal .slides section a:hover, .reveal .slides section a.roll:hover {
+  color: #2d3e50;
+}
+/* line 49, ../sass/_slides.scss */
+.reveal .slides section .strike {
+  text-decoration: line-through;
+}
+
+/* line 5, ../sass/main.scss */
 body {
   color: #333333;
   font-family: 'Open Sans', Arial, sans-serif;
@@ -7,57 +62,112 @@ body {
   background-color: #f2f2f2;
 }
 
-/* line 8, ../sass/main.scss */
-.reveal .slides section {
-  background-color: #f2f2f2;
+/* line 10, ../sass/main.scss */
+#container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 0.5em;
 }
-/* line 11, ../sass/main.scss */
-.reveal .slides section h1, .reveal .slides section h2, .reveal .slides section h3, .reveal .slides section h4, .reveal .slides section h5, .reveal .slides section h6 {
-  font-weight: 800;
-  line-height: 1.2em;
-  padding-bottom: 20px;
+/* line 14, ../sass/main.scss */
+#container p {
+  line-height: 1.4em;
+  text-align: justify;
 }
-/* line 17, ../sass/main.scss */
-.reveal .slides section h1 {
-  color: #e64c66;
-  font-size: 3.4em;
-}
-/* line 22, ../sass/main.scss */
-.reveal .slides section h2 {
-  color: #2d3e50;
-  font-size: 2.8em;
-}
-/* line 27, ../sass/main.scss */
-.reveal .slides section h3 {
-  color: #1bbc9b;
-  font-size: 2.4em;
-}
-/* line 30, ../sass/main.scss */
-.reveal .slides section h3.small {
-  font-size: 1.8em;
-}
-/* line 36, ../sass/main.scss */
-.reveal .slides section strong {
-  font-weight: 700;
-}
-/* line 40, ../sass/main.scss */
-.reveal .slides section pre code {
-  font-size: 1.6em;
-  line-height: 1.2em;
-  padding: 15px;
-}
-/* line 46, ../sass/main.scss */
-.reveal .slides section a, .reveal .slides section a.roll {
-  color: #e64c66;
+
+/* line 20, ../sass/main.scss */
+a {
+  -webkit-transition: all 1.5s ease;
+  -moz-transition: all 1.5s ease;
+  transition: all 1.5s ease;
   text-decoration: none;
   font-weight: 700;
-  padding: 50px;
+  color: #1bbc9b;
 }
-/* line 51, ../sass/main.scss */
-.reveal .slides section a:hover, .reveal .slides section a.roll:hover {
+/* line 25, ../sass/main.scss */
+a:hover {
   color: #2d3e50;
 }
+
+/* line 30, ../sass/main.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+
+/* line 35, ../sass/main.scss */
+h1 {
+  color: #e64c66;
+  font-size: 2.6em;
+}
+
+/* line 40, ../sass/main.scss */
+h2 {
+  color: #2d3e50;
+  font-size: 2.4em;
+}
+
+/* line 45, ../sass/main.scss */
+h3 {
+  color: #1bbc9b;
+  font-size: 2.2em;
+}
+
+/* line 50, ../sass/main.scss */
+header {
+  padding-top: 100px;
+}
+/* line 52, ../sass/main.scss */
+header h1 {
+  font-size: 5em;
+  text-align: center;
+}
 /* line 56, ../sass/main.scss */
-.reveal .slides section .strike {
-  text-decoration: line-through;
+header nav {
+  margin: 30px 0px;
+  text-align: center;
+}
+/* line 59, ../sass/main.scss */
+header nav ul {
+  display: inline;
+}
+/* line 61, ../sass/main.scss */
+header nav ul li {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  display: inline;
+  margin: 15px;
+  font-size: 1.2em;
+}
+/* line 66, ../sass/main.scss */
+header nav ul li a {
+  padding: 5px 50px;
+  background-color: #1bbc9b;
+  border-radius: 20px;
+  color: #2d3e50;
+}
+/* line 71, ../sass/main.scss */
+header nav ul li a:hover {
+  background-color: #2d3e50;
+  color: #1bbc9b;
+}
+
+/* line 81, ../sass/main.scss */
+.content-box {
+  float: left;
+  min-height: 250px;
+  margin: 1%;
+  padding: 1%;
+  width: 29%;
+  background-color: #d9d9d9;
+}
+
+/* line 90, ../sass/main.scss */
+.content-box:nth-child(3n+1) {
+  clear: both;
+}
+
+/* line 94, ../sass/main.scss */
+.center {
+  text-align: center;
 }

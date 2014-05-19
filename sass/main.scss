@@ -1,59 +1,96 @@
 @import "var";
+@import "slides";
+@import "exercises";
 
 body {
   @include font-base;
   background-color: $background;
 }
 
-.reveal .slides section {
-  background-color: $background;
-
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 800;
-    line-height: $fontSize * 0.6;
-    padding-bottom: 20px;
+#container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: $fontSize * 0.25;
+  p {
+    line-height: $fontSize * 0.7;
+    text-align: justify;
   }
+}
 
-  h1 {
-    color: $accent;
-    font-size: $fontSize * 1.7;
-  }
-
-  h2 {
+a {
+  @include transitionAll;
+  text-decoration: none;
+  font-weight: 700;
+  color: $light;
+  &:hover {
     color: $dark;
-    font-size: $fontSize * 1.4;
   }
+}
 
-  h3 {
-    color: $light;
-    font-size: $fontSize * 1.2;
-    &.small {
-      font-size: $fontSize * 0.9;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+
+h1 {
+  color: $accent;
+  font-size: $fontSize * 1.3;
+}
+
+h2 {
+  color: $dark;
+  font-size: $fontSize * 1.2;
+}
+
+h3 {
+  color: $light;
+  font-size: $fontSize * 1.1;
+}
+
+header {
+  padding-top: 100px;
+  h1 {
+    font-size: $fontSize * 2.5;
+    text-align: center;
+  }
+  nav {
+    margin: 30px 0px;
+    text-align: center;
+    ul {
+      display: inline;
+      li {
+        @include transitionAll(0.2s);
+        display: inline;
+        margin: 15px;
+        font-size: $fontSize * 0.6;
+        a {
+          padding: 5px 50px;
+          background-color: $light;
+          border-radius: 20px;
+          color: $dark;
+          &:hover {
+            background-color: $dark;
+            color: $light;
+          }
+        }
+      }
     }
   }
+}
 
+.content-box {
+  float: left;
+  min-height: 250px;
+  margin: 1%;
+  padding: 1%;
+  width: 29%;
+  background-color: darken($background, 10%);
+}
 
-  strong {
-    font-weight: 700;
-  }
+.content-box:nth-child(3n+1) {
+  clear: both;
+}
 
-  pre code {
-    font-size: $fontSize * 0.8;
-    line-height: $fontSize * 0.6;
-    padding: 15px;
-  }
-
-  a, a.roll {
-    color: $accent;
-    text-decoration: none;
-    font-weight: 700;
-    padding: 50px;
-    &:hover {
-      color: $dark;
-    }
-  }
-
-  .strike {
-    text-decoration: line-through;
-  }
+.center {
+  text-align: center;
 }
