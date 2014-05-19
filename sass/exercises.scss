@@ -53,10 +53,11 @@ h3 {
 }
 
 header {
-  padding-top: 100px;
+  padding: 100px 0px;
   h1 {
     font-size: $fontSize * 2.5;
     text-align: center;
+    @include textShadow;
   }
   nav {
     margin: 30px 0px;
@@ -73,6 +74,7 @@ header {
           background-color: $dark;
           border-radius: 20px;
           color: $light;
+          @include textShadow;
           &:hover {
             background-color: lighten($dark, 40%);
             color: $accent;
@@ -100,6 +102,7 @@ header {
   h2 {
     font-size: $fontSize * 0.8;
     text-align: center;
+    @include textShadow;
   }
   &:nth-child(3n) {
     background-color: lighten($accent, 30%);

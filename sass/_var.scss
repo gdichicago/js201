@@ -23,3 +23,7 @@ $background: lighten($text, 75%);
   -moz-transition: all $time ease;
   transition: all $time ease;
 }
+
+@mixin textShadow {
+  text-shadow: 1px 1px 3px lighten($text, 20%);
+}
