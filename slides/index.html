@@ -91,9 +91,6 @@ for (var i = 0; i< elems.length; i++) {
         </section><!--/jquery: why?-->
 
 
-
-
-
         <section>
           <header><h3>jQuery: Why?</h3></header>
             <p>No library:</p>
@@ -110,6 +107,18 @@ newP.css({'float': 'left', 'background-color': 'red')
 newP.addClass('special');
 $('div.header').append(newP);</code></pre>
         </section><!--/jquery: why?-->
+
+        <section>
+          <h3>Including jQuery</h3>
+          <p>To use jQuery, we have to include the library just like our regular JavaScript files.</p>
+          <p>The most popular way to do this is to use a CDN.</p>
+          <pre><code class="html">&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+          <p>Grab the snippet:<br><a href="http://goo.gl/iKFHs">goo.gl/iKFHs</a></p>
+          <p><em>Make sure you add <code>http:</code> at the beginning of the <code>src</code>!</em></p>
+        </section>
+
+
+
 
 
 
@@ -387,10 +396,118 @@ $('div.header').append(newP);</code></pre>
         </section>
 
         <section>
+          <h3>Loops: review</h3>
+          <p>Loops allow us to call a method on every item in a group efficiently.</p>
+          <p>With jQuery, we have a method called <code>each</code> that we can use.</p>
+          <p>You can use each with an anonymous function, or with a named function.</p>
+        </section>
+
+        <section>
+          <h3>Anonymous functions</h3>
+          <p><code>each</code> can take an anonymous function:</p>
+          <pre><code class="javascript" contenteditable>var links = $('a');
+
+links.each(function(index, elem) {
+  var link = $(elem);
+  link.html(link.html() + '!');
+});</code></pre>
+        </section>
+
+        <section>
+          <h3>Named functions</h3>
+          <p>Or a named function:</p>
+          <pre><code class="javascript" contenteditable>var processElem = function(index, elem) {
+  var link = $(elem);
+  link.html(link.html() + '!');
+};
+
+var links = $('a');
+
+links.each(processElem);</code></pre>
+        </section>
+
+
+
+        <section>
           <h1>Events</h1>
           <h2>Making changes after user action</h2>
-          <h3>Clicks, hovers, mouseovers, and more</h3>
+          <h3>Clicks, hovers, and more</h3>
         </section>
+
+        <section>
+          <h3>Lots of events</h3>
+          <p><a href="http://api.jquery.com/category/events/">Event documentation</a></p>
+          <p>There are <em>tons</em> of events.</p>
+          <p>Seriously, there are a ton. Don't try and memorize them.</p>
+          <p>A few of the popular events are...</p>
+        </section>
+
+        <section>
+          <h3>Mouse events</h3>
+          <ul>
+            <li>Clicking: <code>click()</code>, actually clicking on something with your mouse</li>
+            <li>Double clicking: <code>dblclick()</code></li>
+            <li>Hovering: <code>hover()</code>, mouse entering and then leaving an element</li>
+            <li>Entering and exiting: <code>mouseenter()</code> and <code>mouseleave()</code></li>
+          </ul>
+          <br><br>
+          <p>You can use all of these as their own functions, or with <code>on()</code>. Most people use them as their own functions, which is what we are going to practice.</p>
+        </section>
+
+        <section>
+          <h3><code>click()</code></h3>
+          <p>With an anonymous function:</p>
+          <pre><code class="js" contentedtiable>$('a').click(function (event) {
+  event.preventDefault();
+  console.log('Not going there!');
+});</code></pre>
+          <h3>Wait, wat.</h3>
+          <p>What is <code>event.preventDefault()</code>?</p>
+        </section>
+
+        <section>
+          <h3><code>preventDefault()</code></h3>
+          <p>When you click something, a default behavior happens. If it's a link, that behavior is going to where the <code>href</code> points to.</p>
+          <p><code>event.preventDefault();</code> tells jQuery to <strong>not</strong> do the default behavior: the link doesn't take you anywhere, you stay exactly where you are on the page.</p>
+        </section>
+
+        <section>
+          <h3><code>click()</code></h3>
+          <p><code>click()</code> can also be used with a named function:</p>
+          <pre><code class="js" contenteditable>function onButtonClick() {
+  console.log('clicked!');
+}
+
+$('#button').click(onButtonClick);</code></pre>
+        </section>
+
+        <section>
+          <h3>Form events</h3>
+          <p>Form specific:</p>
+          <ul>
+            <li>Submitting a form: <code>submit()</code>, when you submit the form ("enter" key, or clicking a submit button)</li>
+          </ul>
+          <br><br>
+          <p>Mostly used with forms, but not form specific:</p>
+          <ul>
+            <li>Blurring: <code>blur()</code>, cursor leaves a form field or element</li>
+            <li>Focusing: <code>focus()</code>, cursor enters a form field or element; this is also used to help manage screenreaders and what they focus on after events and actions</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3><code>submit()</code></h3>
+          <p>Looks a lot like <code>click()</code>, doesn't it?</p>
+          <pre><code class="js" contenteditable>$('form').submit(function (event) {
+  event.preventDefault();
+  console.log('Not submitting, time to validate!');
+});</code></pre>
+          <p>Just like with click, we are preventing the default behavior again. The behavior we're preventing is form submission.</p>
+          <p>You can also use <code>submit()</code> with a named function.</p>
+        </section>
+
+
+
 
         <section>
           <h1>Effects & Animation</h1>
@@ -398,44 +515,42 @@ $('div.header').append(newP);</code></pre>
           <h3>Adding a little flair to our page</h3>
         </section>
 
+        <section>
+          <h3><code>fadeIn()</code></h3>
+          <p>You can make pretty things happen automatically:</p>
+          <pre><code class="js" contenteditable>$('#error').fadeIn();</code></pre>
+
+          <p>Or after an event:</p>
+          <pre><code class="js" contenteditable>$('a').click(function (event) {
+  event.preventDefault();
+  $('#error').fadeIn();
+});</code></pre>
+
+          <p><a href="http://api.jquery.com/fadein/">Documentation</a></p>
+        </section>
 
         <section>
-          <header><h3>jQuery: Looping</h3></header>
-            <br>
-            <pre><code class="javascript" contenteditable>ar links = $('a');
-links.each(function(index, elem) {
-   var link = $(elem);
-   link.html(link.html() + '!');
-});
-</code></pre>
-
-<pre><code class="javascript" contenteditable>var processElem = function(index, elem) {
-   var link = $(elem);
-   link.html(link.html() + '!');
-};
-var links = $('a');
-links.each(processElem);</code></pre>
-
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
-        </section><!--/jquery: looping-->
-
+          <h3>Effect options</h3>
+          <p>Most effects and animations have multiple options that can be passed as arguments. You can control things like timing, delay, and speed.</p>
+          <p>It is best to consult the documentation for the method you want to use.</p>
+        </section>
 
         <section>
-          <header><h3>jQuery: Including</h3></header>
-            <p><a href="http://jquery.com/download/">Download</a> or link from an official CDN.</p>
-            <p>Then include using a &#60;script&#62 tag on the page.</p>
-<pre><code class="javascript" contenteditable>lt;html&gt;
-&lt;body&gt;
-  &lt;h3&gt;Hi!&lt;/h3&gt;
-  &lt;script src="jquery.min.js"&gt;&lt;/script&gt;
-  &lt;script&gt;
-  // Your code here
-  &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+          <h3><code>fadeIn()</code> with options</h3>
+          <p>These options control duration (default: 400 ms), easing (default: "swing"), and a function to do upon completion.</p>
+          <pre><code class="js" contenteditable>$("#menu").click(function() {
+  $("#nav").fadeIn(200, "linear", function() {
+    console.log("Faded in!");
+  });
+});</code></pre>
+        </section>
 
-<pre class="speaker-notes" style="display:none">shorter, cross-browser</code></pre>
-        </section><!--/jquery: including-->
+        <section>
+          <h3>Effects</h3>
+          <p>There are lots of effects and animations.</p>
+          <p>They all have different options and configurations. You should read about them!</p>
+          <p><a href="http://api.jquery.com/category/effects/">Effect documentation</a></p>
+        </section>
 
 
         <section>
