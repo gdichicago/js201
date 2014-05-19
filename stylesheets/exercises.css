@@ -5,22 +5,21 @@ body {
   font-size: 2em;
   font-weight: 400;
   background-color: #f2f2f2;
-  background-image: linear-gradient(to bottom, #83edd7, #8ba4be, #f3a5b3);
 }
 
-/* line 15, ../sass/exercises.scss */
+/* line 8, ../sass/exercises.scss */
 #container {
   max-width: 1200px;
   margin: 0 auto;
   font-size: 0.5em;
 }
-/* line 19, ../sass/exercises.scss */
+/* line 12, ../sass/exercises.scss */
 #container p {
   line-height: 1.4em;
   text-align: justify;
 }
 
-/* line 25, ../sass/exercises.scss */
+/* line 18, ../sass/exercises.scss */
 a {
   -webkit-transition: all 1.5s ease;
   -moz-transition: all 1.5s ease;
@@ -29,55 +28,55 @@ a {
   font-weight: 700;
   color: #1bbc9b;
 }
-/* line 30, ../sass/exercises.scss */
+/* line 23, ../sass/exercises.scss */
 a:hover {
   color: #2d3e50;
 }
 
-/* line 35, ../sass/exercises.scss */
+/* line 28, ../sass/exercises.scss */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
   padding-bottom: 20px;
 }
 
-/* line 40, ../sass/exercises.scss */
+/* line 33, ../sass/exercises.scss */
 h1 {
   color: #e64c66;
   font-size: 2.6em;
 }
 
-/* line 45, ../sass/exercises.scss */
+/* line 38, ../sass/exercises.scss */
 h2 {
   color: #2d3e50;
   font-size: 2.4em;
 }
 
-/* line 50, ../sass/exercises.scss */
+/* line 43, ../sass/exercises.scss */
 h3 {
   color: #1bbc9b;
   font-size: 2.2em;
 }
 
-/* line 55, ../sass/exercises.scss */
+/* line 48, ../sass/exercises.scss */
 header {
   padding: 100px 0px;
 }
-/* line 57, ../sass/exercises.scss */
+/* line 50, ../sass/exercises.scss */
 header h1 {
   font-size: 5em;
   text-align: center;
   text-shadow: 1px 1px 3px #666666;
 }
-/* line 62, ../sass/exercises.scss */
+/* line 55, ../sass/exercises.scss */
 header nav {
   margin: 30px 0px;
   text-align: center;
 }
-/* line 65, ../sass/exercises.scss */
+/* line 58, ../sass/exercises.scss */
 header nav ul {
   display: inline;
 }
-/* line 67, ../sass/exercises.scss */
+/* line 60, ../sass/exercises.scss */
 header nav ul li {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -86,7 +85,7 @@ header nav ul li {
   margin: 15px;
   font-size: 1.2em;
 }
-/* line 72, ../sass/exercises.scss */
+/* line 65, ../sass/exercises.scss */
 header nav ul li a {
   padding: 5px 50px;
   background-color: #2d3e50;
@@ -94,13 +93,13 @@ header nav ul li a {
   color: #1bbc9b;
   text-shadow: 1px 1px 3px #666666;
 }
-/* line 78, ../sass/exercises.scss */
+/* line 71, ../sass/exercises.scss */
 header nav ul li a:hover {
   background-color: #8ba4be;
   color: #e64c66;
 }
 
-/* line 88, ../sass/exercises.scss */
+/* line 81, ../sass/exercises.scss */
 .content-box {
   float: left;
   height: 550px;
@@ -110,42 +109,42 @@ header nav ul li a:hover {
   border-radius: 50px;
   background-color: #acbdd0;
 }
-/* line 96, ../sass/exercises.scss */
+/* line 89, ../sass/exercises.scss */
 .content-box img {
   border-radius: 50px;
   display: block;
   margin: 0 auto;
   padding-bottom: 20px;
 }
-/* line 102, ../sass/exercises.scss */
+/* line 95, ../sass/exercises.scss */
 .content-box h2 {
   font-size: 1.6em;
   text-align: center;
   text-shadow: 1px 1px 3px #666666;
 }
-/* line 107, ../sass/exercises.scss */
+/* line 100, ../sass/exercises.scss */
 .content-box:nth-child(3n) {
   background-color: #f9d2d9;
 }
-/* line 109, ../sass/exercises.scss */
+/* line 102, ../sass/exercises.scss */
 .content-box:nth-child(3n) h2 {
   color: #e64c66;
 }
-/* line 113, ../sass/exercises.scss */
+/* line 106, ../sass/exercises.scss */
 .content-box:nth-child(3n+2) {
   background-color: #aff4e6;
 }
-/* line 115, ../sass/exercises.scss */
+/* line 108, ../sass/exercises.scss */
 .content-box:nth-child(3n+2) h2 {
   color: #1bbc9b;
 }
 
-/* line 121, ../sass/exercises.scss */
+/* line 114, ../sass/exercises.scss */
 .content-box:nth-child(3n+1) {
   clear: both;
 }
 
-/* line 125, ../sass/exercises.scss */
+/* line 118, ../sass/exercises.scss */
 .center {
   text-align: center;
 }

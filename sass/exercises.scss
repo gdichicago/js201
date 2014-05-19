@@ -3,13 +3,6 @@
 body {
   @include font-base;
   background-color: $background;
-  background-image:
-    linear-gradient(
-      to bottom,
-      lighten($light, 30%),
-      lighten($dark, 40%),
-      lighten($accent, 20%)
-    )
 }
 
 #container {
