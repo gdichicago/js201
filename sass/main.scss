@@ -1,7 +1,0 @@
-@import "var";
-@import "slides";
-
-body {
-  @include font-base;
-  background-color: $background;
-}
