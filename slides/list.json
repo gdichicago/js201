@@ -22,5 +22,11 @@
     "getters-setters.html",
     "getters.html",
     "setters.html",
-    "finders.html"
+    "finders.html",
+    "finding-elements.html",
+    "by-html-element.html",
+    "by-id.html",
+    "by-class.html",
+    "complex-selectors.html",
+    "develop-it-exercise-3.html"
 ]
