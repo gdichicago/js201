@@ -17,5 +17,5 @@ $ grunt server
 To compile for distribution (`public` folder):
 
 ```
-$grunt dist
+$ grunt dist
 ```
