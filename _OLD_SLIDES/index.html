@@ -1,44 +1,4 @@
 
-
-<section>
-<h1>Loops</h1>
-<h2>Many elements</h2>
-<h3>Finding, changing, and modifying groups of elements</h3>
-</section>
-
-<section>
-<h3>Loops: review</h3>
-<p>Loops allow us to call a method on every item in a group efficiently.</p>
-<p>With jQuery, we have a method called <code>each</code> that we can use.</p>
-<p>You can use each with an anonymous function, or with a named function.</p>
-</section>
-
-<section>
-<h3>Anonymous functions</h3>
-<p><code>each</code> can take an anonymous function:</p>
-<pre><code class="javascript" contenteditable>var links = $('a');
-
-  links.each(function(index, elem) {
-  var link = $(elem);
-  link.html(link.html() + '!');
-});</code></pre>
-</section>
-
-<section>
-<h3>Named functions</h3>
-<p>Or a named function:</p>
-<pre><code class="javascript" contenteditable>var processElem = function(index, elem) {
-  var link = $(elem);
-  link.html(link.html() + '!');
-};
-
-var links = $('a');
-
-links.each(processElem);</code></pre>
-</section>
-
-
-
 <section>
 <h1>Events</h1>
 <h2>Making changes after user action</h2>

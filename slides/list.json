@@ -46,5 +46,11 @@
     "simple-elements.html",
     "complex-elements.html",
     "really-complex-elements.html",
-    "develop-it-exercise-6.html"
+    "develop-it-exercise-6.html",
+    "loops.html",
+    "loops-review.html",
+    "anonymous-function.html",
+    "named-function.html",
+    "develop-it-exercise-7.html",
+    "events.html"
 ]
