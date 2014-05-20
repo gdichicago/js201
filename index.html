@@ -40,18 +40,15 @@
 
             <div class="slides">
 
-                <% _.forEach(slides, function(slide) { %>
-                    <% if (!_.isArray(slide)) { %>
-                        <%= section(slide) %>
-                    <% } %>
-                    <% if (_.isArray(slide)) { %>
-                        <section>
-                            <% _.forEach(slide, function(verticalslide) { %>
-                                <%= section(verticalslide) %>
-                            <% }); %>
-                        </section>
-                    <% } %>
-                <% }); %>
+                
+                    
+                        
+    <section data-markdown="slides/index.md"></section>
+
+
+                    
+                    
+                
             </div>
 
         </div>

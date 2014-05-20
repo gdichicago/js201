@@ -1,10 +1,3 @@
-
-# JS201: Intro to jQuery
-
-From the terminal, pop in:
-
-  ```yo reveal:slide "Slide Title"```
-
-Available options:
-
- ```--markdown --attributes --notes```
+# Intro to jQuery
+## JS201
+### Girl Develop It
