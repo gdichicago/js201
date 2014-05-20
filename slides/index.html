@@ -26,9 +26,14 @@
 
 
         <section>
+          <h1>jQuery is a JavaScript library.</h1>
+          <h2>What is a library?</h2>
+        </section>
+
+        <section>
           <header><h3>What's a library?</h3></header>
             <p>A collection of reusable methods for a particular purpose.</p>
-            <p>A math library might have functions like:</p>
+            <p>If we had a math library, it might have functions like:</p>
 <pre><code class="javascript" contenteditable>math.sum(array);
 math.pow(num, num);
 math.factorial(num);
@@ -36,7 +41,7 @@ math.factorial(num);
         </section><!--/what's a library?-->
 
         <section>
-          <header><h3>What's a library?</h3></header>
+          <header><h3>Including a library</h3></header>
             <ul>
               <li>Include a script tag to the library on your page</li>
               <li>Call functions from that library</li>
@@ -47,11 +52,8 @@ math.factorial(num);
   alert(answer);
 &#60;&#47;script&#62;
 </code></pre>
+          <p>We include the library before our JavaScript so that it loads before our code does.</p>
         </section><!--/what's a library?-->
-
-        <section>
-          <header><h3><a href="exercises/exercise1.html">Exercise 1!</a></h3></header>
-        </section><!--/exercise1-->
 
         <section>
           <h1>Why?</h1>
@@ -64,21 +66,24 @@ math.factorial(num);
             <p>Write less code for common tasks.</p>
             <p>Abstract on top of cross-browser differences.</p>
             <a href="http://jquery.com/"><img src="img/jquery.png"></a>
+            <p>Libraries can provide us with code that does all of this for us.</p>
         </section><!--/why use libraries?-->
 
 
         <section>
-          <h3>jQuery: Why?</h3>
+          <h3>Why jQuery?</h3>
           <p>jQuery makes it easier for us to write code that is:</p>
           <ul>
             <li>Shorter</li>
             <li>Cross-browser compatible</li>
             <li><em>Way</em> less work</li>
           </ul>
+          <br><br>
+          <h3>Don't believe me? We'll see...</h3>
         </section>
 
         <section>
-          <header><h3>jQuery: Why?</h3></header>
+          <header><h3>jQuery vs. JavaScript</h3></header>
             <p>No library:</p>
 <pre><code class="javascript" contenteditable>var elems = document.getElementsByTagName("img");
 for (var i = 0; i< elems.length; i++) {
@@ -87,12 +92,12 @@ for (var i = 0; i< elems.length; i++) {
 </code></pre>
 
             <p>jQuery:</p>
-<pre><code class="javascript" contenteditable>('img').hide();</code></pre>
+<pre><code class="javascript" contenteditable>$('img').hide();</code></pre>
         </section><!--/jquery: why?-->
 
 
         <section>
-          <header><h3>jQuery: Why?</h3></header>
+          <header><h3>jQuery vs. JavaScript</h3></header>
             <p>No library:</p>
 <pre><code class="javascript" contenteditable>var p = document.createElement('p');
 p.appendChild(document.createTextNode('Welcome!'));
@@ -109,14 +114,13 @@ $('div.header').append(newP);</code></pre>
         </section><!--/jquery: why?-->
 
         <section>
-          <h3>Including jQuery</h3>
-          <p>To use jQuery, we have to include the library just like our regular JavaScript files.</p>
+          <h3>Exercise 1</h3>
+          <p>Before we use jQuery, we have to include the library just like our regular JavaScript files.</p>
           <p>The most popular way to do this is to use a CDN.</p>
           <pre><code class="html">&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
           <p>Grab the snippet:<br><a href="http://goo.gl/iKFHs">goo.gl/iKFHs</a></p>
           <p><em>Make sure you add <code>http:</code> at the beginning of the <code>src</code>!</em></p>
         </section>
-
 
 
 
