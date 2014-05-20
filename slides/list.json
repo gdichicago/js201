@@ -52,5 +52,12 @@
     "anonymous-function.html",
     "named-function.html",
     "develop-it-exercise-7.html",
-    "events.html"
+    "events.html",
+    "lots-of-events.html",
+    "mouse-events.html",
+    "click.html",
+    "preventdefault.html",
+    "click-named-function.html",
+    "develop-it-exercise-8.html",
+    "effects-animation.html"
 ]
