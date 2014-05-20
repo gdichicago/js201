@@ -1,474 +1,130 @@
-<!doctype html>
-<html>
-<head>
-  <title>Girl Develop It</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/css/reveal.css">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/css/light.css">
-
-  <!-- If use the PDF print sheet so students can print slides-->
-  <link rel="stylesheet" href="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/css/print/pdf.css" type="text/css" media="print">
-    <!--[if lt IE 9]>
-    <script src="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/js/html5shiv.js"></script>
-    <![endif]-->
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,800' rel='stylesheet' type='text/css'>
-  <link href="../stylesheets/main.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-
-    <div class="reveal">
-      <div class="slides">
-        <section>
-          <h1>JS 201</h1>
-          <h2>Intro to jQuery</h2>
-          <h3>Girl Develop It</h3>
-        </section><!--/jquery title slide-->
-
-
-        <section>
-          <h1>jQuery is a JavaScript library.</h1>
-          <h2>What is a library?</h2>
-        </section>
-
-        <section>
-          <header><h3>What's a library?</h3></header>
-            <p>A collection of reusable methods for a particular purpose.</p>
-            <p>If we had a math library, it might have functions like:</p>
-<pre><code class="javascript" contenteditable>math.sum(array);
-math.pow(num, num);
-math.factorial(num);
-</code></pre>
-        </section><!--/what's a library?-->
-
-        <section>
-          <header><h3>Including a library</h3></header>
-            <ul>
-              <li>Include a script tag to the library on your page</li>
-              <li>Call functions from that library</li>
-            </ul>
-<pre><code class="html" contenteditable>&#60;script src="http://imagine-it.org/math.js"&#62;&#60;&#47;script&#62;
-&#60;script&#62;
-  var answer = math.sum(2, 2);
-  alert(answer);
-&#60;&#47;script&#62;
-</code></pre>
-          <p>We include the library before our JavaScript so that it loads before our code does.</p>
-        </section><!--/what's a library?-->
-
-        <section>
-          <h1>Why?</h1>
-          <h2>Why use jQuery?</h2>
-          <h3>Why use libraries?</h3>
-        </section>
-
-        <section>
-          <header><h3>Why use libraries?</h3></header>
-            <p>Write less code for common tasks.</p>
-            <p>Abstract on top of cross-browser differences.</p>
-            <a href="http://jquery.com/"><img src="img/jquery.png"></a>
-            <p>Libraries can provide us with code that does all of this for us.</p>
-        </section><!--/why use libraries?-->
-
-
-        <section>
-          <h3>Why jQuery?</h3>
-          <p>jQuery makes it easier for us to write code that is:</p>
-          <ul>
-            <li>Shorter</li>
-            <li>Cross-browser compatible</li>
-            <li><em>Way</em> less work</li>
-          </ul>
-          <br><br>
-          <h3>Don't believe me? We'll see...</h3>
-        </section>
-
-        <section>
-          <header><h3>jQuery vs. JavaScript</h3></header>
-            <p>No library:</p>
-<pre><code class="javascript" contenteditable>var elems = document.getElementsByTagName("img");
-for (var i = 0; i< elems.length; i++) {
-  elems[i].style.display = "none";
-}
-</code></pre>
-
-            <p>jQuery:</p>
-<pre><code class="javascript" contenteditable>$('img').hide();</code></pre>
-        </section><!--/jquery: why?-->
-
-
-        <section>
-          <header><h3>jQuery vs. JavaScript</h3></header>
-            <p>No library:</p>
-<pre><code class="javascript" contenteditable>var p = document.createElement('p');
-p.appendChild(document.createTextNode('Welcome!'));
-p.style.cssFloat = 'left';
-p.style.backgroundColor = 'red';
-p.className = 'special';
-document.querySelector('div.header').appendChild(p);</code></pre>
-
-            <p>jQuery:</p>
-<pre><code class="javascript" contenteditable>var newP = $('&#60;p&#62Welcome!&#60;&#47;p&#62');
-newP.css({'float': 'left', 'background-color': 'red')
-newP.addClass('special');
-$('div.header').append(newP);</code></pre>
-        </section><!--/jquery: why?-->
-
-        <section>
-          <h3>Exercise 1</h3>
-          <p>Before we use jQuery, we have to include the library just like our regular JavaScript files.</p>
-          <p>The most popular way to do this is to use a CDN.</p>
-          <pre><code class="html">&lt;script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
-          <p>Grab the snippet:<br><a href="http://goo.gl/iKFHs">goo.gl/iKFHs</a></p>
-          <p>Add the snippet to the practice file <code>index.html</code>. <em>Make sure you add <code>http:</code> at the beginning of the <code>src</code>!</em></p>
-        </section>
-
-
-
-
-
-
-        <section>
-          <h1>Basic syntax</h1>
-          <h2>Breaking it down</h2>
-          <h3>Arguments and reading documentation</h3>
-        </section>
-
-        <section>
-          <header><h3>Basic syntax</h3></header>
-          <p>We start with an HTML element:</p>
-<pre><code class="html" contenteditable>&lt;p&gt;Welcome to jQuery!&lt;/p&gt;</code></pre>
-              <img src="img/arrow.png">
-              <p>Use jQuery to add a class to it:</p>
-<pre><code class="javascript" contenteditable>$('p').addClass('special');</code></pre>
-              <img src="img/arrow.png">
-              <p>And tada! Our HTML now has a class:</p>
-<pre><code class="js" contenteditable>&lt;p class="special">Welcome to jQuery!&lt;/p&gt;</code></pre>
-        </section><!--/jquery: the basics 1-->
-
-        <section>
-          <header><h3>Breaking it down</h3></header>
-          <p>We have one simple line of jQuery here, but there's a lot happening.</p>
-<pre><code class="js" contenteditable>$('p').addClass('special');</code></pre>
-        </section>
-
-        <section>
-          <h3><code>$</code></h3>
-          <pre><code class="js" contenteditable>$</code></pre>
-          <p><code>$</code> is the global jQuery function.</p>
-          <p>You can also use <code>jQuery</code> if you want, but <code>$</code> is the <strong>standard</strong>.</p>
-        </section>
-
-        <section>
-          <h3><code>('p')</code></h3>
-          <pre><code class="js" contenteditable>$('p')</code></pre>
-          <p><code>('p')</code> finds DOM element(s) according to what's in the quotes. In our example, that's all <code>p</code> elements.</p>
-          <p>This returns a "jQuery collection" of all <code>p</code> elements in the DOM.</p>
-        </section>
-
-        <section>
-          <h3><code>addClass()</code></h3>
-          <pre><code class="js" contenteditable>$('p').addClass('special');</code></pre>
-          <p><code>.addClass()</code> is a built-in jQuery method that adds the specified class to the collection.</p>
-          <p>It takes one argument: a string that is the class name (special in our example).</p>
-          <p><a href="http://api.jquery.com/addClass/" target="_blank">Read the docs here.</a></p>
-        </section>
-
-        <section>
-          <h3><code>$(document).ready()</code></h3>
-          <p>We don't want our code to run unless the DOM is ready for it. jQuery has a special function for this:</p>
-          <pre><code class="js" contenteditable>$(document).ready()</code></pre>
-          <p>Using our existing example, we would write:</p>
-          <pre><code class="js" contenteditable>$(document).ready(function() {
-  $('p').addClass('special');
-});</code></pre>
-          <p>This will add the class <code>special</code> to all of the <code>p</code> elements.</p>
-          <p>The semicolons are important because we want this code to run as soon as our browser reads it.</p>
-        </section>
-
-        <section>
-          <h3>Exercise 2</h3>
-          <p>Open the <code>main.js</code> and <code>index.html</code> practice files in your text editor and make these changes:</p>
-          <ul>
-            <li>Include <code>main.js</code> inside of <code>index.html</code></li>
-            <li>Add <code>$(document).ready()</code></li>
-            <li>Add a class to every image on the page</li>
-            <li>Open <code>index.html</code> in Chrome (or Firefox); inspect an image element and make sure the class you added is there!</li>
-          </ul>
-        </section>
-
-
-
-
-        <section>
-          <h1>Getters & Setters</h1>
-          <h2>Find and change elements</h2>
-          <h3>With one line of code!</h3>
-        </section>
-
-        <section>
-          <h3>Getters</h3>
-          <p>Getters return information about the HTML.</p>
-          <p>Sometimes they take arguments to narrow our focus:</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com"&gt;Google&lt;/a&gt;</code></pre>
-          <pre><code class="js" contenteditable>$('a').attr('href');
-// "Welcome!"</code></pre>
-          <p>And sometimes they don't:</p>
-          <pre><code class="html" contenteditable>&lt;p&gt;Welcome!&lt;/p&gt;</code></pre>
-          <pre><code class="js" contenteditable>$('p').html();
-// "Welcome!"</code></pre>
-        </section>
-
-        <section>
-          <h3>Setters</h3>
-          <p>Setters change the HTML.</p>
-          <p>They almost always take an argument (sometimes more than one).</p>
-          <pre><code class="html" contenteditable>&lt;p&gt;Welcome!&lt;/p&gt;</code></pre>
-          <pre><code class="js" contenteditable>$('p').html("Hello");</code></pre>
-          <p>Will change your HTML to:</p>
-          <pre><code class="html" contenteditable>&lt;p&gt;Hello&lt;/p&gt;</code></pre>
-        </section>
-
-
-
-
-
-
-        <section>
-          <h1>Finders</h1>
-          <h2>Finding elements</h2>
-          <h3>By element, class, and id</h3>
-        </section>
-
-        <section>
-          <h3>Finding elements</h3>
-          <p>All CSS selectors are valid, plus more.</p>
-          <p><a href="http://api.jquery.com/category/selectors/">Read the docs.</a></p>
-        </section>
-
-        <section>
-          <h3>By HTML element</h3>
-          <p>With this HTML:</p>
-          <pre><code class="html" contenteditable>&lt;p&gt;Welcome!&lt;/p&gt;</code></pre>
-          <p>We find it this way:</p>
-          <pre><code class="js" contenteditable>$('p')</code></pre>
-        </section>
-
-        <section>
-          <h3>By id</h3>
-          <p>With this HTML:</p>
-          <pre><code class="html" contenteditable>&lt;div id="main"&gt;Welcome!&lt;/div&gt;</code></pre>
-          <p>We find it this way:</p>
-          <pre><code class="js" contenteditable>$('#main')</code></pre>
-        </section>
-
-        <section>
-          <h3>By class</h3>
-          <p>With this HTML:</p>
-          <pre><code class="html" contenteditable>&lt;div class="intro"&gt;Welcome!&lt;/div&gt;</code></pre>
-          <p>We find it this way:</p>
-          <pre><code class="js" contenteditable>$('.intro')</code></pre>
-        </section>
-
-        <section>
-          <h3>Complex selectors</h3>
-          <p>With this HTML:</p>
-          <pre><code class="html" contenteditable>&lt;div id="main" class="intro"&gt;Welcome!&lt;/div&gt;</code></pre>
-          <p>We find it this way:</p>
-          <pre><code class="js" contenteditable>$('#main .intro')</code></pre>
-        </section>
-
-        <section>
-          <h3>Exercise 3</h3>
-          <ul>
-            <li>Open the console in Chrome or Firefox</li>
-            <li>Find all of the <code>section</code> elements on the page</li>
-            <li>Find all of the <code>article</code> elements on the page</li>
-            <li>Find some more elements!</li>
-            <li>Try classes!</li>
-          </ul>
-        </section>
-
-
-
-
-        <section>
-          <h1>Getters</h1>
-          <h2>Reading elements</h2>
-          <h3>HTML, attributes, and style properties</h3>
-        </section>
-
-        <section>
-          <h3>Reading elements</h3>
-          <p>There are a few different ways to read elements.</p>
-          <p>Starting with this HTML:</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
-          <p>We can find out lots of fun things!</p>
-        </section>
-
-        <section>
-          <h3><code>html()</code></h3>
-          <p>Gets the HTML contents of the first element that matches your selector.</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
-          <pre><code class="js" contenteditable>console.log($('a').html());
-// "Yahoo"</code></pre>
-          <p><a href="http://api.jquery.com/html/">Read the docs.</a></p>
-        </section>
-
-        <section>
-          <h3><code>attr()</code></h3>
-          <p>Gets the value of a specific attribute for the first element that matches your selector.</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
-          <pre><code class="js" contenteditable>console.log($('a').attr('href'));
-// "http://www.yahoo.com"</code></pre>
-          <p><a href="http://api.jquery.com/attr/">Read the docs.</a></p>
-        </section>
-
-        <section>
-          <h3><code>css()</code></h3>
-          <p>Gets the value of the style property for first element that matches your selector.</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo&lt;/a&gt;</code></pre>
-          <pre><code class="js" contenteditable>console.log($('a').css('color'));
-// "purple"</code></pre>
-          <p><a href="http://api.jquery.com/css/">Read the docs.</a></p>
-        </section>
-
-        <section>
-          <h3>Exercise 4</h3>
-          <ul>
-            <li>Open the console in Chrome or Firefox</li>
-            <li>Use <code>html()</code>, <code>attr()</code>, and <code>css()</code> to get the values of various properties</li>
-          </ul>
-        </section>
-
-
-
-
-
-        <section>
-          <h1>Setters</h1>
-          <h2>Change elements</h2>
-          <h3>HTML, attributes, and style properties</h3>
-        </section>
-
-        <section>
-          <h3>Changing elements</h3>
-          <p>We can change different parts of our HTML using jQuery.</p>
-          <p>Starting with this HTML:</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Google&lt;/a&gt;</code></pre>
-        </section>
-
-        <section>
-          <h3><code>html('value')</code></h3>
-          <p>Sets the value of the HTML.</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Google&lt;/a&gt;</code></pre>
-          <pre><code class="js" contenteditable>$('a').html('Yahoo!');</code></pre>
-          <p>Changes the HTML to:</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
-          <p><a href="http://api.jquery.com/html/">Read the docs.</a></p>
-        </section>
-
-        <section>
-          <h3 class="small"><code>attr('attribute', 'value')</code></h3>
-          <p>Sets the value of the property for the first element that matches your selector.</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
-          <pre><code class="js" contenteditable>$('a').attr('href', 'http://www.yahoo.com');</code></pre>
-          <p>Changes the HTML to:</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
-          <p><a href="http://api.jquery.com/attr/">Read the docs.</a></p>
-        </section>
-
-        <section>
-          <h3 class="small"><code>css({'property': 'value'})</code></h3>
-          <p>Sets the value of the style property for first element that matches your selector. <strong>Note the syntax difference here!</strong></p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
-          <pre><code class="js" contenteditable>$('a').css({'color': 'red'});</code></pre>
-          <p>Changes the HTML to:</p>
-          <pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:red"&gt;Yahoo!&lt;/a&gt;</code></pre>
-          <p><a href="http://api.jquery.com/css/">Read the docs.</a></p>
-        </section>
-
-        <section>
-          <h3>Exercise 5</h3>
-          <ul>
-            <li>Open the console in Chrome or Firefox</li>
-            <li>Use <code>html()</code>, <code>attr()</code>, and <code>css()</code> to change your page</li>
-            <li>Refresh the page - what happens?</li>
-            <li>Try the same thing in <code>main.js</code> instead of console</li>
-          </ul>
-        </section>
-
-
-
-
-
-
-        <section>
-          <h1>Creation</h1>
-          <h2>Creating elements</h2>
-          <h3>With <span class="strike">magic</span> jQuery</h3>
-          <img src="img/patronus.gif" alt="WITH MAGIC!">
-        </section>
-
-        <section>
-          <h3>Creating elements</h3>
-          <p>Pass in any HTML string and jQuery will create it and return it as a collection.</p>
-        </section>
-
-        <section>
-          <h3>Simple elements</h3>
-          <p>With this jQuery:</p>
-          <pre><code class="js" contenteditable>$(&lt;p&gt;);</code></pre>
-          <p>We create this HTML:</p>
-          <pre><code class="html">&lt;p&gt;&lt;/p&gt;</code></pre>
-        </section>
-
-        <section>
-          <h3>Complex elements</h3>
-          <p>With this jQuery:</p>
-          <pre><code class="js" contenteditable>$(&lt;p&gt;Welcome&lt;/p&gt;);</code></pre>
-          <p>We create this HTML:</p>
-          <pre><code class="html">&lt;p&gt;Welcome&lt;/p&gt;</code></pre>
-        </section>
-
-        <section>
-          <h3 class="small"><em>Really</em> complex elements</h3>
-          <p>With this jQuery:</p>
-          <pre><code class="js" contenteditable>$(&lt;p class="intro"&gt;Welcome&lt;/p&gt;)</code></pre>
-          <p>We create this HTML:</p>
-          <pre><code class="html">&lt;p class="intro"&gt;Welcome&lt;/p&gt;</code></pre>
-        </section>
-
-
-
-
-        <section>
-          <h1>Loops</h1>
-          <h2>Many elements</h2>
-          <h3>Finding, changing, and modifying groups of elements</h3>
-        </section>
-
-        <section>
-          <h3>Loops: review</h3>
-          <p>Loops allow us to call a method on every item in a group efficiently.</p>
-          <p>With jQuery, we have a method called <code>each</code> that we can use.</p>
-          <p>You can use each with an anonymous function, or with a named function.</p>
-        </section>
-
-        <section>
-          <h3>Anonymous functions</h3>
-          <p><code>each</code> can take an anonymous function:</p>
-          <pre><code class="javascript" contenteditable>var links = $('a');
-
-links.each(function(index, elem) {
+
+
+<section>
+<h1>Setters</h1>
+<h2>Change elements</h2>
+<h3>HTML, attributes, and style properties</h3>
+</section>
+
+<section>
+<h3>Changing elements</h3>
+<p>We can change different parts of our HTML using jQuery.</p>
+<p>Starting with this HTML:</p>
+<pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Google&lt;/a&gt;</code></pre>
+</section>
+
+<section>
+<h3><code>html('value')</code></h3>
+<p>Sets the value of the HTML.</p>
+<pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Google&lt;/a&gt;</code></pre>
+<pre><code class="js" contenteditable>$('a').html('Yahoo!');</code></pre>
+<p>Changes the HTML to:</p>
+<pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
+<p><a href="http://api.jquery.com/html/">Read the docs.</a></p>
+</section>
+
+<section>
+<h3 class="small"><code>attr('attribute', 'value')</code></h3>
+<p>Sets the value of the property for the first element that matches your selector.</p>
+<pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
+<pre><code class="js" contenteditable>$('a').attr('href', 'http://www.yahoo.com');</code></pre>
+<p>Changes the HTML to:</p>
+<pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
+<p><a href="http://api.jquery.com/attr/">Read the docs.</a></p>
+</section>
+
+<section>
+<h3 class="small"><code>css({'property': 'value'})</code></h3>
+<p>Sets the value of the style property for first element that matches your selector. <strong>Note the syntax difference here!</strong></p>
+<pre><code class="html" contenteditable>&lt;a href="http://www.google.com" style="color:purple"&gt;Yahoo!&lt;/a&gt;</code></pre>
+<pre><code class="js" contenteditable>$('a').css({'color': 'red'});</code></pre>
+<p>Changes the HTML to:</p>
+<pre><code class="html" contenteditable>&lt;a href="http://www.yahoo.com" style="color:red"&gt;Yahoo!&lt;/a&gt;</code></pre>
+<p><a href="http://api.jquery.com/css/">Read the docs.</a></p>
+</section>
+
+<section>
+<h3>Exercise 5</h3>
+<ul>
+  <li>Open the console in Chrome or Firefox</li>
+  <li>Use <code>html()</code>, <code>attr()</code>, and <code>css()</code> to change your page</li>
+  <li>Refresh the page - what happens?</li>
+  <li>Try the same thing in <code>main.js</code> instead of console</li>
+</ul>
+</section>
+
+
+
+
+
+
+<section>
+<h1>Creation</h1>
+<h2>Creating elements</h2>
+<h3>With <span class="strike">magic</span> jQuery</h3>
+<img src="img/patronus.gif" alt="WITH MAGIC!">
+</section>
+
+<section>
+<h3>Creating elements</h3>
+<p>Pass in any HTML string and jQuery will create it and return it as a collection.</p>
+</section>
+
+<section>
+<h3>Simple elements</h3>
+<p>With this jQuery:</p>
+<pre><code class="js" contenteditable>$(&lt;p&gt;);</code></pre>
+<p>We create this HTML:</p>
+<pre><code class="html">&lt;p&gt;&lt;/p&gt;</code></pre>
+</section>
+
+<section>
+<h3>Complex elements</h3>
+<p>With this jQuery:</p>
+<pre><code class="js" contenteditable>$(&lt;p&gt;Welcome&lt;/p&gt;);</code></pre>
+<p>We create this HTML:</p>
+<pre><code class="html">&lt;p&gt;Welcome&lt;/p&gt;</code></pre>
+</section>
+
+<section>
+<h3 class="small"><em>Really</em> complex elements</h3>
+<p>With this jQuery:</p>
+<pre><code class="js" contenteditable>$(&lt;p class="intro"&gt;Welcome&lt;/p&gt;)</code></pre>
+<p>We create this HTML:</p>
+<pre><code class="html">&lt;p class="intro"&gt;Welcome&lt;/p&gt;</code></pre>
+</section>
+
+
+
+
+<section>
+<h1>Loops</h1>
+<h2>Many elements</h2>
+<h3>Finding, changing, and modifying groups of elements</h3>
+</section>
+
+<section>
+<h3>Loops: review</h3>
+<p>Loops allow us to call a method on every item in a group efficiently.</p>
+<p>With jQuery, we have a method called <code>each</code> that we can use.</p>
+<p>You can use each with an anonymous function, or with a named function.</p>
+</section>
+
+<section>
+<h3>Anonymous functions</h3>
+<p><code>each</code> can take an anonymous function:</p>
+<pre><code class="javascript" contenteditable>var links = $('a');
+
+  links.each(function(index, elem) {
   var link = $(elem);
   link.html(link.html() + '!');
 });</code></pre>
-        </section>
+</section>
 
-        <section>
-          <h3>Named functions</h3>
-          <p>Or a named function:</p>
-          <pre><code class="javascript" contenteditable>var processElem = function(index, elem) {
+<section>
+<h3>Named functions</h3>
+<p>Or a named function:</p>
+<pre><code class="javascript" contenteditable>var processElem = function(index, elem) {
   var link = $(elem);
   link.html(link.html() + '!');
 };
@@ -476,143 +132,141 @@ links.each(function(index, elem) {
 var links = $('a');
 
 links.each(processElem);</code></pre>
-        </section>
+</section>
 
 
 
-        <section>
-          <h1>Events</h1>
-          <h2>Making changes after user action</h2>
-          <h3>Clicks, hovers, and more</h3>
-        </section>
+<section>
+<h1>Events</h1>
+<h2>Making changes after user action</h2>
+<h3>Clicks, hovers, and more</h3>
+</section>
 
-        <section>
-          <h3>Lots of events</h3>
-          <p><a href="http://api.jquery.com/category/events/">Event documentation</a></p>
-          <p>There are <em>tons</em> of events.</p>
-          <p>Seriously, there are a ton. Don't try and memorize them.</p>
-          <p>A few of the popular events are...</p>
-        </section>
+<section>
+<h3>Lots of events</h3>
+<p><a href="http://api.jquery.com/category/events/">Event documentation</a></p>
+<p>There are <em>tons</em> of events.</p>
+<p>Seriously, there are a ton. Don't try and memorize them.</p>
+<p>A few of the popular events are...</p>
+</section>
 
-        <section>
-          <h3>Mouse events</h3>
-          <ul>
-            <li>Clicking: <code>click()</code>, actually clicking on something with your mouse</li>
-            <li>Double clicking: <code>dblclick()</code></li>
-            <li>Hovering: <code>hover()</code>, mouse entering and then leaving an element</li>
-            <li>Entering and exiting: <code>mouseenter()</code> and <code>mouseleave()</code></li>
-          </ul>
-          <br><br>
-          <p>You can use all of these as their own functions, or with <code>on()</code>. Most people use them as their own functions, which is what we are going to practice.</p>
-        </section>
+<section>
+<h3>Mouse events</h3>
+<ul>
+  <li>Clicking: <code>click()</code>, actually clicking on something with your mouse</li>
+  <li>Double clicking: <code>dblclick()</code></li>
+  <li>Hovering: <code>hover()</code>, mouse entering and then leaving an element</li>
+  <li>Entering and exiting: <code>mouseenter()</code> and <code>mouseleave()</code></li>
+</ul>
+<br><br>
+<p>You can use all of these as their own functions, or with <code>on()</code>. Most people use them as their own functions, which is what we are going to practice.</p>
+</section>
 
-        <section>
-          <h3><code>click()</code></h3>
-          <p>With an anonymous function:</p>
-          <pre><code class="js" contentedtiable>$('a').click(function (event) {
+<section>
+<h3><code>click()</code></h3>
+<p>With an anonymous function:</p>
+<pre><code class="js" contentedtiable>$('a').click(function (event) {
   event.preventDefault();
   console.log('Not going there!');
 });</code></pre>
-          <h3>Wait, wat.</h3>
-          <p>What is <code>event.preventDefault()</code>?</p>
-        </section>
+<h3>Wait, wat.</h3>
+<p>What is <code>event.preventDefault()</code>?</p>
+</section>
 
-        <section>
-          <h3><code>preventDefault()</code></h3>
-          <p>When you click something, a default behavior happens. If it's a link, that behavior is going to where the <code>href</code> points to.</p>
-          <p><code>event.preventDefault();</code> tells jQuery to <strong>not</strong> do the default behavior: the link doesn't take you anywhere, you stay exactly where you are on the page.</p>
-        </section>
+<section>
+<h3><code>preventDefault()</code></h3>
+<p>When you click something, a default behavior happens. If it's a link, that behavior is going to where the <code>href</code> points to.</p>
+<p><code>event.preventDefault();</code> tells jQuery to <strong>not</strong> do the default behavior: the link doesn't take you anywhere, you stay exactly where you are on the page.</p>
+</section>
 
-        <section>
-          <h3><code>click()</code></h3>
-          <p><code>click()</code> can also be used with a named function:</p>
-          <pre><code class="js" contenteditable>function onButtonClick() {
+<section>
+<h3><code>click()</code></h3>
+<p><code>click()</code> can also be used with a named function:</p>
+<pre><code class="js" contenteditable>function onButtonClick() {
   console.log('clicked!');
 }
 
 $('#button').click(onButtonClick);</code></pre>
-        </section>
+</section>
 
-        <section>
-          <h3>Form events</h3>
-          <p>Form specific:</p>
-          <ul>
-            <li>Submitting a form: <code>submit()</code>, when you submit the form ("enter" key, or clicking a submit button)</li>
-          </ul>
-          <br><br>
-          <p>Mostly used with forms, but not form specific:</p>
-          <ul>
-            <li>Blurring: <code>blur()</code>, cursor leaves a form field or element</li>
-            <li>Focusing: <code>focus()</code>, cursor enters a form field or element; this is also used to help manage screenreaders and what they focus on after events and actions</li>
-          </ul>
-        </section>
+<section>
+<h3>Form events</h3>
+<p>Form specific:</p>
+<ul>
+  <li>Submitting a form: <code>submit()</code>, when you submit the form ("enter" key, or clicking a submit button)</li>
+</ul>
+<br><br>
+<p>Mostly used with forms, but not form specific:</p>
+<ul>
+  <li>Blurring: <code>blur()</code>, cursor leaves a form field or element</li>
+  <li>Focusing: <code>focus()</code>, cursor enters a form field or element; this is also used to help manage screenreaders and what they focus on after events and actions</li>
+</ul>
+</section>
 
-        <section>
-          <h3><code>submit()</code></h3>
-          <p>Looks a lot like <code>click()</code>, doesn't it?</p>
-          <pre><code class="js" contenteditable>$('form').submit(function (event) {
+<section>
+<h3><code>submit()</code></h3>
+<p>Looks a lot like <code>click()</code>, doesn't it?</p>
+<pre><code class="js" contenteditable>$('form').submit(function (event) {
   event.preventDefault();
   console.log('Not submitting, time to validate!');
 });</code></pre>
-          <p>Just like with click, we are preventing the default behavior again. The behavior we're preventing is form submission.</p>
-          <p>You can also use <code>submit()</code> with a named function.</p>
-        </section>
+<p>Just like with click, we are preventing the default behavior again. The behavior we're preventing is form submission.</p>
+<p>You can also use <code>submit()</code> with a named function.</p>
+</section>
 
 
 
 
-        <section>
-          <h1>Effects & Animation</h1>
-          <h2>Fun pretty things</h2>
-          <h3>Adding a little flair to our page</h3>
-        </section>
+<section>
+<h1>Effects & Animation</h1>
+<h2>Fun pretty things</h2>
+<h3>Adding a little flair to our page</h3>
+</section>
 
-        <section>
-          <h3><code>fadeIn()</code></h3>
-          <p>You can make pretty things happen automatically:</p>
-          <pre><code class="js" contenteditable>$('#error').fadeIn();</code></pre>
+<section>
+<h3><code>fadeIn()</code></h3>
+<p>You can make pretty things happen automatically:</p>
+<pre><code class="js" contenteditable>$('#error').fadeIn();</code></pre>
 
-          <p>Or after an event:</p>
-          <pre><code class="js" contenteditable>$('a').click(function (event) {
+<p>Or after an event:</p>
+<pre><code class="js" contenteditable>$('a').click(function (event) {
   event.preventDefault();
   $('#error').fadeIn();
 });</code></pre>
 
-          <p><a href="http://api.jquery.com/fadein/">Documentation</a></p>
-        </section>
+<p><a href="http://api.jquery.com/fadein/">Documentation</a></p>
+</section>
 
-        <section>
-          <h3>Effect options</h3>
-          <p>Most effects and animations have multiple options that can be passed as arguments. You can control things like timing, delay, and speed.</p>
-          <p>It is best to consult the documentation for the method you want to use.</p>
-        </section>
+<section>
+<h3>Effect options</h3>
+<p>Most effects and animations have multiple options that can be passed as arguments. You can control things like timing, delay, and speed.</p>
+<p>It is best to consult the documentation for the method you want to use.</p>
+</section>
 
-        <section>
-          <h3><code>fadeIn()</code> with options</h3>
-          <p>These options control duration (default: 400 ms), easing (default: "swing"), and a function to do upon completion.</p>
-          <pre><code class="js" contenteditable>$("#menu").click(function() {
+<section>
+<h3><code>fadeIn()</code> with options</h3>
+<p>These options control duration (default: 400 ms), easing (default: "swing"), and a function to do upon completion.</p>
+<pre><code class="js" contenteditable>$("#menu").click(function() {
   $("#nav").fadeIn(200, "linear", function() {
-    console.log("Faded in!");
-  });
+  console.log("Faded in!");
+});
 });</code></pre>
-        </section>
+</section>
 
-        <section>
-          <h3>Effects</h3>
-          <p>There are lots of effects and animations.</p>
-          <p>They all have different options and configurations. You should read about them!</p>
-          <p><a href="http://api.jquery.com/category/effects/">Effect documentation</a></p>
-        </section>
-
-
-        <section>
-          <header><h3><a href="exercises/exercise_changing.html">Exercise Time!</a></h3></header>
-        </section><!--/exercise2-->
-
-      </div>
-    </div>
+<section>
+<h3>Effects</h3>
+<p>There are lots of effects and animations.</p>
+<p>They all have different options and configurations. You should read about them!</p>
+<p><a href="http://api.jquery.com/category/effects/">Effect documentation</a></p>
+</section>
 
 
+<section>
+<header><h3><a href="exercises/exercise_changing.html">Exercise Time!</a></h3></header>
+</section><!--/exercise2-->
+
+</div>
+</div>
 
 
 
@@ -628,31 +282,33 @@ $('#button').click(onButtonClick);</code></pre>
 
 
 
-    <script src="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/js/head.min.js"></script>
-    <script src="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/js/reveal.min.js"></script>
 
-    <script>
 
-      // Full list of configuration options available here:
-      // https://github.com/hakimel/reveal.js#configuration
-      Reveal.initialize({
-        controls: true,
-        progress: false,
-        history: true,
+<script src="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/js/head.min.js"></script>
+<script src="https://s3.amazonaws.com/gdichicago-cdn/reveal.js/js/reveal.min.js"></script>
 
-        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+<script>
 
-        // Optional libraries used to extend on reveal.js
-        dependencies: [
-        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-        { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-        ]
-      });
-    </script>
-  </body>
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: false,
+    history: true,
+
+    theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+    transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/none
+
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+    { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+    { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+    { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+    { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+    { src: 'https://s3.amazonaws.com/gdichicago-cdn/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    ]
+  });
+</script>
+</body>
 </html>
