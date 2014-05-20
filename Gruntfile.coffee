@@ -82,8 +82,9 @@ module.exports = (grunt) ->
                         'js/**'
                         'css/*.css'
                         'img'
+                        'exercises/**'
                     ]
-                    dest: 'dist/'
+                    dest: 'public/'
                 },{
                     expand: true
                     src: ['index.html']
