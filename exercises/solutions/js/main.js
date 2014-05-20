@@ -7,16 +7,16 @@ $(document).ready(function(){
   // Show the menu
   $('li.activateMenu').click(function() {
     $('li.activateMenu').hide();
-    $('li.menu').show("fast", "swing");
+    $('li.menu').show();
   });
 
   // Hide the menu
   $('li.hide').click(function() {
     $('li.menu').hide();
-    $('li.activateMenu').show("fast", "swing");
+    $('li.activateMenu').show();
   });
 
   $('li.all').click(function() {
-    $('article').toggle("slow", "swing");
+    $('article').slideToggle(2000);
   });
 });
