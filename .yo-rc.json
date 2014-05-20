@@ -3,6 +3,8 @@
     "presentationTitle": "JS201: Intro to jQuery",
     "packageVersion": "0.0.1",
     "useSass": true,
-    "deployToGithubPages": false
+    "deployToGithubPages": false,
+    "githubUsername": "example_username",
+    "githubRepository": "example_repository"
   }
 }

@@ -13,15 +13,15 @@ body {
     padding-bottom: 20px; }
   .reveal .slides section h1 {
     color: #e64c66;
-    font-size: 3.4em; }
+    font-size: 3em; }
   .reveal .slides section h2 {
-    color: #2d3e50;
-    font-size: 2.8em; }
-  .reveal .slides section h3 {
     color: #1bbc9b;
-    font-size: 2.4em; }
-    .reveal .slides section h3.small {
-      font-size: 1.8em; }
+    font-size: 2.6em; }
+    .reveal .slides section h2.small {
+      font-size: 1.6em; }
+  .reveal .slides section h3 {
+    color: #2d3e50;
+    font-size: 2.2em; }
   .reveal .slides section strong {
     font-weight: 700; }
   .reveal .slides section pre code {
