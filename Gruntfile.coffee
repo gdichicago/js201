@@ -43,6 +43,7 @@ module.exports = (grunt) ->
                 files:
                     'css/theme.css': 'css/source/theme.scss'
                     'css/exercises.css': 'css/source/exercises.scss'
+                    'css/website.css': 'css/source/website.scss'
 
         connect:
 
