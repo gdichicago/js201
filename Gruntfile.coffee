@@ -82,13 +82,12 @@ module.exports = (grunt) ->
                         'js/**'
                         'css/*.css'
                         'img/**'
-                        'exercises/**'
                     ]
-                    dest: 'public/'
+                    dest: 'slideshow/'
                 },{
                     expand: true
                     src: ['index.html']
-                    dest: 'public/'
+                    dest: 'slideshow/'
                     filter: 'isFile'
                 }]
 
