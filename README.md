@@ -1,4 +1,4 @@
-# GDI JS 201
+# GDI JS 201: Intro to jQuery
 
 Slides are built using the [Yeoman Reveal generator template](https://github.com/gdichicago/yeoman_reveal_template). See the repo for instructions on making modifications to the slides.
 
